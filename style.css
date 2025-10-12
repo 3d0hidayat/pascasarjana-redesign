@@ -84,7 +84,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 nav ul li a {
@@ -580,5 +580,63 @@ p.footer-brand-text {
     }
     .footer-identity, .footer-address h4, .footer-social h4, .social-links {
         justify-content: center;
+    }
+}
+/* GANTI SEMUA STYLE UNTUK TOMBOL BAHASA DENGAN INI */
+
+/* Container untuk bendera */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara dua bendera */
+    margin-left: 20px;
+}
+
+/* Styling untuk tombol bendera */
+.lang-btn {
+    background-color: transparent;
+    border: 2px solid transparent; /* Border transparan untuk menjaga layout */
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%; /* Membuat frame bendera menjadi bulat */
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0.6; /* Bendera yang tidak aktif akan sedikit redup */
+}
+
+/* Styling untuk gambar bendera di dalam tombol */
+.lang-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar bendera mengisi frame bulat */
+    border-radius: 50%;
+}
+
+/* Efek saat hover */
+.lang-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Style untuk bendera yang aktif */
+.lang-btn.active {
+    border-color: #ffffff; /* Memberi border putih pada bendera aktif */
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Responsiveness untuk language switcher */
+@media (max-width: 992px) {
+    .language-switcher {
+        margin-left: auto; /* Pindahkan ke kanan sebelum hamburger */
+        margin-right: 20px;
+    }
+
+    nav ul {
+        top: 85px; /* Sesuaikan jika tinggi header berubah */
     }
 }
