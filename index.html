@@ -34,16 +34,18 @@
         <li><a href="Berita.html" data-lang="nav_berita">Berita</a></li>
         <li><a href="Kerjasama.html" data-lang="nav_kerjasama">Kerjasama</a></li>
     </ul>
-    <div class="language-switcher">
-    <button id="lang-id" class="lang-btn active">
-        <img src="img/flag-id.png" alt="Bahasa Indonesia">
-    </button>
-    <button id="lang-en" class="lang-btn">
-        <img src="img/flag-en.png" alt="English Language">
-    </button>
-</div>
-    <div class="hamburger-menu">
-        <i class='bx bx-menu'></i>
+    <div class="nav-right">
+        <div class="language-switcher">
+            <button id="lang-id" class="lang-btn active">
+                <img src="img/flag-id.png" alt="Bahasa Indonesia">
+            </button>
+            <button id="lang-en" class="lang-btn">
+                <img src="img/flag-en.png" alt="English Language">
+            </button>
+        </div>
+        <div class="hamburger-menu">
+            <i class='bx bx-menu'></i>
+        </div>
     </div>
 </nav>
 </header>
@@ -348,7 +350,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; All Rights Reserved 2025, Pusat Komputer dan Jaringan ITB STIKOM Bali</p>
+            <p data-lang="footer_bottom">&copy; All Rights Reserved 2025, Pusat Komputer dan Jaringan ITB STIKOM Bali</p>
         </div>
     </div>
 </footer>
@@ -364,6 +366,10 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="script.js"></script>
+
+<button id="backToTopBtn" title="Kembali ke atas">
+    <i class='bx bx-chevron-up'></i>
+</button>
 
 </body>
 </html>
