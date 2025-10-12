@@ -84,7 +84,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 25px; /* Jarak antar menu diperkecil */
 }
 
 nav ul li a {
@@ -380,8 +380,31 @@ footer .cta-button:hover {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-identity, .footer-address, .footer-social { flex: 1; }
-.footer-identity { display: flex; align-items: center; gap: 20px; }
+/* --- PERUBAHAN DIMULAI DI SINI --- */
+
+/* Menghapus aturan flex: 1 yang lama */
+/* .footer-identity, .footer-address, .footer-social { flex: 1; } */
+
+.footer-identity { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    flex-shrink: 0; /* Mencegah kolom ini menyusut */
+}
+
+.footer-address { 
+    text-align: center;
+    flex-grow: 1; /* Membiarkan kolom ini mengisi ruang kosong di tengah */
+}
+
+.footer-social { 
+    text-align: right;
+    flex-shrink: 0; /* Mencegah kolom ini menyusut */
+}
+
+/* --- PERUBAHAN SELESAI DI SINI --- */
+
+
 .footer-identity .footer-logo { height: 50px; }
 .footer-separator { width: 1px; height: 40px; background-color: rgba(255, 255, 255, 0.2); }
 
@@ -393,13 +416,12 @@ p.footer-brand-text {
     line-height: 1.1;
     margin: 0;
 }
-.footer-address { text-align: center; }
+
 .footer-address h4, .footer-social h4 { color: #ffffff; font-weight: 500; margin: 0 0 10px 0; display: flex; align-items: center; gap: 8px; }
 .footer-address h4 { justify-content: center; }
 .footer-address i { font-size: 1.2rem; }
 .footer-address p { margin: 0; font-size: 0.9rem; }
 
-.footer-social { text-align: right; }
 .footer-social h4 { justify-content: flex-end; }
 .social-links { display: flex; gap: 15px; justify-content: flex-end; }
 .social-links a { display: inline-flex; justify-content: center; align-items: center; width: 40px; height: 40px; background-color: transparent; border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff; border-radius: 50%; font-size: 20px; transition: all 0.3s ease; }
@@ -582,8 +604,8 @@ p.footer-brand-text {
         justify-content: center;
     }
 }
-/* GANTI SEMUA STYLE UNTUK TOMBOL BAHASA DENGAN INI */
 
+/* Styling untuk Tombol Bahasa Bendera */
 /* Container untuk bendera */
 .language-switcher {
     display: flex;
@@ -629,7 +651,6 @@ p.footer-brand-text {
     transform: scale(1.05);
 }
 
-/* Responsiveness untuk language switcher */
 @media (max-width: 992px) {
     .language-switcher {
         margin-left: auto; /* Pindahkan ke kanan sebelum hamburger */
