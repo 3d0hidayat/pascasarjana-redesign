@@ -216,7 +216,6 @@ function setupHamburgerMenu() {
     });
 }
 
-// --- BARU: Fungsi untuk Mengatur Bahasa ---
 function setLanguage(lang) {
     const elements = document.querySelectorAll('[data-lang]');
     elements.forEach(el => {
@@ -225,11 +224,9 @@ function setLanguage(lang) {
             el.innerHTML = languageContent[lang][key];
         }
     });
-     // Ganti atribut lang pada tag html
     document.documentElement.lang = lang;
 }
 
-// --- BARU: Fungsi Setup untuk Pilihan Bahasa ---
 function setupLanguageSwitcher() {
     const langIdBtn = document.getElementById('lang-id');
     const langEnBtn = document.getElementById('lang-en');
@@ -248,8 +245,7 @@ function setupLanguageSwitcher() {
         langIdBtn.classList.remove('active');
     });
 
-    // Cek bahasa yang tersimpan di localStorage saat halaman dimuat
-    const savedLanguage = localStorage.getItem('language') || 'id'; // Default ke 'id'
+    const savedLanguage = localStorage.getItem('language') || 'id';
     setLanguage(savedLanguage);
     if (savedLanguage === 'en') {
         langEnBtn.classList.add('active');
@@ -259,7 +255,6 @@ function setupLanguageSwitcher() {
         langEnBtn.classList.remove('active');
     }
 }
-
 
 function setupBrosurModal() {
     const modalOverlay = document.getElementById('brosur-modal');
@@ -316,7 +311,6 @@ function setupAkreditasiModal() {
 }
 
 function setupTestimonialSlider() {
-    const sliderWrapper = document.querySelector('.testimonial-wrapper');
     const track = document.querySelector('.testimonial-track');
     const cards = document.querySelectorAll('.testimonial-card');
     const prevButton = document.getElementById('prevBtn');
@@ -334,11 +328,8 @@ function setupTestimonialSlider() {
 
     const firstClone = cards[0].cloneNode(true);
     const lastClone = cards[totalCards - 1].cloneNode(true);
-    firstClone.setAttribute('data-clone', 'true');
-    lastClone.setAttribute('data-clone', 'true');
     track.appendChild(firstClone);
     track.insertBefore(lastClone, cards[0]);
-
     track.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
 
     dotsContainer.innerHTML = '';
@@ -363,7 +354,6 @@ function setupTestimonialSlider() {
     function moveToSlide(newIndex) {
         if (isTransitioning) return;
         isTransitioning = true;
-        
         track.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
         currentIndex = newIndex;
         track.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
@@ -376,24 +366,16 @@ function setupTestimonialSlider() {
             currentIndex = 1;
             track.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
         }
-        
         if (currentIndex === 0) {
             track.style.transition = 'none';
             currentIndex = totalCards;
             track.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
         }
-        
         isTransitioning = false;
     });
 
-    nextButton.addEventListener('click', () => {
-        moveToSlide(currentIndex + 1);
-    });
-
-    prevButton.addEventListener('click', () => {
-        moveToSlide(currentIndex - 1);
-    });
-
+    nextButton.addEventListener('click', () => moveToSlide(currentIndex + 1));
+    prevButton.addEventListener('click', () => moveToSlide(currentIndex - 1));
     window.addEventListener('resize', () => {
         cardWidth = track.parentElement.getBoundingClientRect().width;
         track.style.transition = 'none';
@@ -401,16 +383,42 @@ function setupTestimonialSlider() {
     });
 }
 
+// --- BARU: Fungsi untuk Tombol Back to Top ---
+function setupBackToTopButton() {
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+    if (!backToTopBtn) return;
+
+    // Tampilkan tombol saat scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Muncul setelah scroll 300px
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    // Scroll ke atas saat diklik
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Animasi scroll halus
+        });
+    });
+}
+
+
 // --- Event Listener Utama ---
 document.addEventListener('DOMContentLoaded', function() {
     AOS.init({ duration: 800, once: true });
 
     // Panggil semua fungsi setup di sini
-    setupLanguageSwitcher(); // <-- PANGGIL FUNGSI BAHASA
+    setupLanguageSwitcher();
     setupBrosurModal();
     setupKeunggulanTabs();
     setupInfoTerkiniTabs();
     setupAkreditasiModal();
     setupTestimonialSlider();
     setupHamburgerMenu();
+    setupBackToTopButton(); // <-- PANGGIL FUNGSI BARU DI SINI
 });
