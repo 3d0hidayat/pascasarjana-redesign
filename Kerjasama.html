@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerjasama - Pascasarjana ITB STIKOM Bali</title>
+    <link rel="icon" type="image/png" href="./img/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="kerjasama.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+         <div class="logo">
+             <a href="index.html" class="logo-link-header">
+                 <img src="img/LogoITB.png" alt="Logo ITB STIKOM Bali">
+                 <div class="logo-separator"></div>
+                 <span class="header-brand-text" data-lang="pascasarjana_brand">PASCA<br>SARJANA</span>
+             </a>
+         </div>
+         <div class="nav-right">
+             <ul>
+                 <li><a href="index.html" data-lang="nav_beranda">Beranda</a></li>
+                 <li><a href="tentang.html" data-lang="nav_tentang">Tentang Kami</a></li>
+                 <li><a href="prodi.html" data-lang="nav_prodi">Program Studi</a></li>
+                 <li><a href="Akademik.html" data-lang="nav_akademik">Akademik</a></li>
+                 <li><a href="Berita.html" data-lang="nav_berita">Berita</a></li>
+                 <li><a href="Kerjasama.html" data-lang="nav_kerjasama">Kerjasama</a></li>
+                 <li class="li-language-switcher">
+                     <div class="language-switcher">
+                         <button id="lang-id-mobile" class="lang-btn lang-btn-id active"><img src="img/flag-id.svg" alt="Bahasa Indonesia"></button>
+                         <button id="lang-en-mobile" class="lang-btn lang-btn-en"><img src="img/flag-en.svg" alt="English Language"></button>
+                     </div>
+                 </li>
+             </ul>
+             <div class="language-switcher-desktop">
+                 <button id="lang-id-desktop" class="lang-btn lang-btn-id active"><img src="img/flag-id.svg" alt="Bahasa Indonesia"></button>
+                 <button id="lang-en-desktop" class="lang-btn lang-btn-en"><img src="img/flag-en.svg" alt="English Language"></button>
+             </div>
+             <div class="hamburger-menu">
+                 <i class='bx bx-menu'></i>
+             </div>
+         </div>
+        </nav>
+    </header>
+
+    <main class="kerjasama-page">
+        <section class="page-header">
+            <div class="section-container">
+                <h1 data-aos="fade-up" data-lang="kerjasama_title">Jaringan Kemitraan Strategis</h1>
+                <p data-aos="fade-up" data-aos-delay="100" data-lang="kerjasama_subtitle">Kami percaya kolaborasi adalah kunci inovasi. Berikut adalah daftar institusi, perusahaan, dan organisasi yang telah bekerjasama dengan kami untuk memajukan pendidikan dan teknologi.</p>
+            </div>
+        </section>
+
+        <section class="featured-partners">
+            <div class="section-container">
+                <h2 class="sub-section-title" data-aos="fade-up" data-lang="featured_title">Mitra Unggulan & Afiliasi Program</h2>
+                <div class="featured-grid">
+                    <div class="featured-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="img/inkubator.png" alt="Logo Inkubator Bisnis INIBIS BALI">
+                        <h3 data-lang="featured_inibis">Inkubator Bisnis (INIBIS)</h3>
+                    </div>
+                    <div class="featured-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="img/mikrotik_academy.png" alt="Logo Mikrotik Academy">
+                        <h3>Mikrotik Academy</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partner-gallery">
+            <div class="section-container">
+                <h2 class="sub-section-title" data-aos="fade-up" data-lang="all_partners_title">Seluruh Mitra Kerjasama</h2>
+                <div class="filter-buttons" data-aos="fade-up" data-aos-delay="100">
+                    <button class="filter-btn active" data-filter="semua" data-lang="filter_all">Semua (78)</button>
+                    <button class="filter-btn" data-filter="pt-internasional" data-lang="filter_pt_int">PT Internasional</button>
+                    <button class="filter-btn" data-filter="pt-nasional" data-lang="filter_pt_nas">PT Nasional</button>
+                    <button class="filter-btn" data-filter="pemerintahan" data-lang="filter_gov">Pemerintah & Yayasan</button>
+                    <button class="filter-btn" data-filter="bumn" data-lang="filter_bumn">BUMN</button>
+                    <button class="filter-btn" data-filter="korporat" data-lang="filter_corp">Korporat Swasta</button>
+                    <button class="filter-btn" data-filter="bank" data-lang="filter_bank">Bank</button>
+                    <button class="filter-btn" data-filter="sekolah" data-lang="filter_school">SMA/SMK & LPK</button>
+                    <button class="filter-btn" data-filter="media" data-lang="filter_media">Media</button>
+                </div>
+
+                <div class="logo-gallery">
+                    <div class="logo-card" data-category="pt-internasional" data-aos="zoom-in"><img src="https://iepcanada.ca/wp-content/uploads/2024/09/Homepage-Logo.png" alt="Logo IEP Canada"><p>IEP (International Education Platform) Canada Inc</p></div>
+                    <div class="logo-card" data-category="pt-internasional" data-aos="zoom-in"><div class="logo-fallback">HIT</div><p>Hungchi International Taiwan</p></div>
+                    <div class="logo-card" data-category="pt-internasional" data-aos="zoom-in"><img src="https://english.neusoft.edu.cn/attachment/cms/item/2023_09/26_09/b20153a2c01a3359.png" alt="Logo Dalian Neusoft University Of Information"><p>Dalian Neusoft University Of Information</p></div>
+                    <div class="logo-card" data-category="pt-internasional" data-aos="zoom-in"><img src="https://www.tru.ca/__shared/assets/Logos-01_-TRU_Logo_Left_900px37269.png" alt="Logo Thompson River University"><p>Thompson River University</p></div>
+                    <div class="logo-card" data-category="pt-internasional" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/en/b/bf/WuFeng_University_logo.png" alt="Logo Wufeng University"><p>Wufeng University</p></div>
+                    <div class="logo-card" data-category="pt-internasional" data-aos="zoom-in"><img src="https://media.licdn.com/dms/image/v2/D560BAQGdz2dUQv_bJA/company-logo_200_200/company-logo_200_200/0/1665454483311/lithan_logo?e=2147483647&v=beta&t=6viUPwZHQIGVV3__GsxxKfVoCjKllCK6HJkwsem4SCI" alt="Logo Lithan Educlaas Alliance Singapore"><p>Lithan Educlaas Alliance Singapore</p></div>
+                    <div class="logo-card" data-category="pt-internasional" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/en/8/83/HELP_University_Logo.png" alt="Logo HELP University Malaysia"><p>HELP University Malaysia</p></div>
+
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://dwijendra.ac.id/storage/2024/01/logoundwi.png" alt="Logo Universitas Dwijendra Denpasar"><p>Universitas Dwijendra Denpasar</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://www.ubhara.ac.id/v3/Ubr/logo-ubhara.png" alt="Logo Universitas Bhayangkara Surabaya"><p>Universitas Bhayangkara Surabaya</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://universitassimalungun.ac.id/assets/img/logo-usi.png" alt="Logo Universitas Simalungun"><p>Universitas Simalungun</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/LOGO-ISI-DENPASAR.png" alt="Logo ISI Denpasar"><p>ISI Denpasar</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/id/thumb/0/01/Institut_Teknologi_Sepuluh_Nopember_seal.svg/1200px-Institut_Teknologi_Sepuluh_Nopember_seal.svg.png" alt="Logo Institut Teknologi Sepuluh November"><p>Institut Teknologi Sepuluh November</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://iktl.ac.id/wp-content/uploads/2021/01/cropped-IKTL-LOGO2-e1610085504837.png" alt="Logo Institut Teknologi Keguruan Larantuka"><p>Institut Teknologi Keguruan Larantuka</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Logo_udinus1.jpg" alt="Logo Universitas Dian Nuswantoro Semarang"><p>Universitas Dian Nuswantoro Semarang</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://ecampus.binainsani.ac.id/binainsani/img/logo_perguruanTinggi_11.png" alt="Logo STMIK Bina Insani"><p>STMIK Bina Insani</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://assets.nsd.co.id/images/kampus/logo/images_(1)1.jpg" alt="Logo STMIK Sepuluh November Jayapura"><p>STMIK Sepuluh November Jayapura</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://www.stmikpontianak.ac.id/wp-content/uploads/2022/03/logo-stmik-web-baru-logo-saja.png" alt="Logo STMIK Pontianak"><p>STMIK Pontianak</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://ppid.unud.ac.id/uploads/page/3d70a571e5726425b9750646ab7443cd.png" alt="Logo Universitas Udayana"><p>Universitas Udayana</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjr8VW6KCzW0AhcOrMn_E58Qp47snn-JHFoFLR7SYJUi8vUxCWVUOuUzyAtauL-bmvOH8ihLV3y_y6pYeZLrWdt8_6ZIcO0COY-xzSyjOBcTl_jUsOr13hHB6O5s1ATd3eUO_63TgGTsdw0/s1600/logo+raharja.jpg" alt="Logo Perguruan Tinggi Raharja"><p>Perguruan Tinggi Raharja</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://assets.nsd.co.id/images/kampus/logo/043059.png" alt="Logo Sekolah Tinggi Teknologi (STT) Bandung"><p>Sekolah Tinggi Teknologi (STT) Bandung</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrHfe9VE94QXvhiDFvw9YU1tJMw0xC1shTDw&s" alt="Logo STMIK Tasikmalaya"><p>STMIK Tasikmalaya</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/LOGO_UNIVERSITAS_KLABAT.png/500px-LOGO_UNIVERSITAS_KLABAT.png" alt="Logo Universitas Klabat Manado"><p>Universitas Klabat Manado</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://www.technogis.co.id/wp-content/uploads/2024/12/Universitas-Amikom-Yogyakarta-Logo.png" alt="Logo Universitas Amikom Yogyakarta"><p>Universitas Amikom Yogyakarta</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/id/1/19/Logo_Universitas_Hindu_Negeri_I_Gusti_Bagus_Sugriwa.png" alt="Logo Universitas Hindu I.G.B Sugriwa Denpasar"><p>Universitas Hindu I.G.B Sugriwa Denpasar</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://akupintar.id/documents/20143/0/Sekolah-Tinggi-Manajemen-Informatika-dan-Komputer-Dipanegara-Makassar.png/1d18d625-b691-c40a-e3ca-c5c5d27d188b?version=1.0&t=1534248494560&imageThumbnail=1" alt="Logo STMIK Dipanegara Makasar"><p>STMIK Dipanegara Makasar</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Logopotensiutama.png" alt="Logo Universitas Potensi Utama"><p>Universitas Potensi Utama</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/id/a/a2/Logo_Binus_University.png" alt="Logo Universitas Bina Nusantara"><p>Universitas Bina Nusantara</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://assets.nsd.co.id/images/kampus/logo/22.jpg" alt="Logo Politeknik Kesehatan Denpasar"><p>Politeknik Kesehatan Denpasar</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/id/5/52/UNMAS_Denpasar_logo.jpeg" alt="Logo Universitas Mahasaraswati Denpasar"><p>Universitas Mahasaraswati Denpasar</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://www.pnb.ac.id/img/logo-pnb.3aae610b.png" alt="Logo Politeknik Negeri Bali"><p>Politeknik Negeri Bali</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://stikes-notokusumo.ac.id/wp-content/uploads/2023/10/logo.png" alt="Logo STIKES Notokusumo Yogyakarta"><p>STIKES Notokusumo Yogyakarta</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Logo_undiksha.png/500px-Logo_undiksha.png" alt="Logo Universitas Pendidikan Ganesha (UNDIKSHA)"><p>Universitas Pendidikan Ganesha</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Prkwnwt_rEYq7jnxSoIyBtwB6kGO7Ssl-A&s" alt="Logo Universitas Pendidikan Nasional Denpasar"><p>Universitas Pendidikan Nasional Denpasar</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://stiami.ac.id/theme-assets/images/logo.png" alt="Logo Institut Ilmu Sosial dan Manajemen STIAMI"><p>Institut Ilmu Sosial dan Manajemen STIAMI</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://untag-sby.ac.id/uploads/media/Logo_Untag_Surabaya.jpg" alt="Logo Universitas 17 Agustus 1945 Surabaya"><p>Universitas 17 Agustus 1945 Surabaya</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZXkANz4FK935cQJDu3LCNYKhu-T32GWCv4g&s" alt="Logo STMIK Triguna Dharma"><p>STMIK Triguna Dharma</p></div>
+                    <div class="logo-card" data-category="pt-nasional" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Logo_Universitas_Nusa_Putra.png/500px-Logo_Universitas_Nusa_Putra.png"><p>Universitas Nusa Putra</p></div>
+                    
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Logo_Kementerian_Ketenagakerjaan_%282016%29.png" alt="Logo Kementerian Ketenagakerjaan RI"><p>Kementerian Ketenagakerjaan RI</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Logo_Kementerian_Komunikasi_dan_Digital_Republik_Indonesia_%282024%29.svg" alt="Logo Kementrian Kominfo RI"><p>Kementrian Kominfo RI</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Logo_BMKG_%282010%29.png" alt="Logo Badan Meteorologi, Klimatologi, dan Geofisika RI"><p>Badan Meteorologi, Klimatologi, dan Geofisika RI</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Official_seal_of_the_Province_of_Bali.png" alt="Logo Pemerintah Provinsi Bali"><p>Pemerintah Provinsi Bali</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://bali.bps.go.id/_next/image?url=%2Fassets%2Flogo-bps.png&w=3840&q=75" alt="Logo Badan Pusat Statistik Provinsi Bali"><p>Badan Pusat Statistik Provinsi Bali</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Lambang_Kabupaten_Badung.png" alt="Logo Pemerintah Kabupaten Badung"><p>Pemerintah Kabupaten Badung</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Lambang_Kabupaten_Sikka.png" alt="Logo Pemerintah Kabupaten Sikka"><p>Pemerintah Kabupaten Sikka</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Lambang_Polda_Bali.png" alt="Logo POLDA Bali"><p>POLDA Bali</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuEKTBFoaHdB3uYd08YAN5lbnbB6jjSQeA7g&s" alt="Logo BMKG Ngurah Rai Bali"><p>BMKG Ngurah Rai Bali</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Lambang-kabupaten-jember.png" alt="Logo Pemerintah Kabupaten Jember"><p>Pemerintah Kabupaten Jember</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://aptikom4.wordpress.com/wp-content/uploads/2008/04/aptikom-logo2.jpg" alt="Logo APTIKOM"><p>Asosiasi Pendidikan Tinggi Informatika dan Komputer</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5SF5U3f0n9ndHNlGl9KoTzbwjFJE_BxvC0A&s" alt="Logo DPD Perbarindo Bali"><p>DPD Perbarindo Bali</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://pbs.twimg.com/profile_images/715454383505276928/KNLel3gs_400x400.jpg" alt="Logo IndoCeiss"><p>IndoCeiss</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2TxWs6ANesHQqRsHjO1MiFSfJRexcvnUk5NNJMuUOy9thr5j5gOOrRY2LWd2ZSqYRywRM91hBJMtrXw5bhrtBHNoGIAhhQlvmgeMi7V3PfRI0NbmzdbmQtVlowAYlqKnsrgjl3Ws3wAhX5j2UC4HPGNtk6DZSCBJsxNwb6Quu2iPBoExqYhqOiyIhuA/s1597/Logo%20BP2MI.png" alt="Logo BP2MI"><p>BP2MI</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjGG6_1wTVv07ZxeUGIF7SOY7pBXY4BzhWzw&s" alt="Logo Prebekel Desa Dangin Puri Kelod"><p>Prebekel Desa Dangin Puri Kelod</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://batannyuh.desa.id/desa/upload/artikel/sedang_1615286036_logo%20desa%202.png" alt="Logo Kepala Banjar Umadiwang"><p>Kepala Banjar Umadiwang Desa Batan Nyuh</p></div>
+                    <div class="logo-card" data-category="pemerintahan" data-aos="zoom-in"><img src="https://www.hipmidenpasar.org/assets/images/logo-hipmi.png" alt="Logo Himpunan Pengusaha Muda Indonesia (HIPMI) Denpasar"><p>HIPMI Denpasar</p></div>
+
+                    <div class="logo-card" data-category="bumn" data-aos="zoom-in"><img src="https://www.telkom.co.id/minio/show/data/image_upload/page/1594108255409_compress_logo%20telkom%20indonesia.png" alt="Logo PT Telkomsel"><p>PT Telkomsel</p></div>
+                    <div class="logo-card" data-category="bumn" data-aos="zoom-in"><img src="https://fhcibumn.com/storage/logo/logo.png" alt="Logo Forum Human Capital Indonesia"><p>Forum Human Capital Indonesia</p></div>
+                    <div class="logo-card" data-category="bumn" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/POSIND_2023.svg/2560px-POSIND_2023.svg.png" alt="Logo POS Indonesia"><p>POS Indonesia</p></div>
+                    
+                    <div class="logo-card" data-category="korporat" data-aos="zoom-in"><img src="https://oneindonesia.id/wp-content/uploads/2025/01/Logo-ONE-Orbit-Nasional-Edukasi-4-1-1.png" alt="Logo ORBIT Nasional Edukasi"><p>ORBIT Nasional Edukasi</p></div>
+                    <div class="logo-card" data-category="korporat" data-aos="zoom-in"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0tqJVgrkhzPGgRGN9qoewArK40LsWB1M7QA&s" alt="Logo Bamboomedia Cipta Persada"><p>Bamboomedia Cipta Persada</p></div>
+                    <div class="logo-card" data-category="korporat" data-aos="zoom-in"><img src="https://yt3.googleusercontent.com/ytc/AIdro_khPP47VfL27fRURNIe3z-qcBEiT7GWAn8DGDJnxU0Lwg=s900-c-k-c0x00ffffff-no-rj" alt="Logo Markplus.Inc"><p>Markplus.Inc</p></div>
+                    <div class="logo-card" data-category="korporat" data-aos="zoom-in"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWGJSp4Z3ckS7MSasNawpew7ffJ8PHXfhv2Q&s" alt="Logo Gosha Kitchen and Patisserie"><p>Gosha Kitchen and Patisserie</p></div>
+                    <div class="logo-card" data-category="korporat" data-aos="zoom-in"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm4GzTUvqHAXfy2DdW1ng72f1ctBUuKkyRSg&s" alt="Logo Evos Esport Indonesia"><p>Evos Esport Indonesia</p></div>
+                    <div class="logo-card" data-category="korporat" data-aos="zoom-in"><img src="https://play-lh.googleusercontent.com/LZZJrk7DZIIhB73UVwBvzC-y15N6yAskSlHIQTES8aan_ZK2JN82tJPWG5I6TcIMM3s" alt="Logo PT Inclusive Finance Group (Dana Cita)"><p>PT Inclusive Finance Group (Dana Cita)</p></div>
+
+                    <div class="logo-card" data-category="bank" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Danamon.svg/2560px-Danamon.svg.png" alt="Logo Bank Danamon"><p>Bank Danamon</p></div>
+                    <div class="logo-card" data-category="bank" data-aos="zoom-in"><img src="https://bprsfajarbali.com/assets/img/konfigurasi/web.png" alt="Logo Bank Fajar Syariah"><p>Bank Fajar Syariah</p></div>
+                    <div class="logo-card" data-category="bank" data-aos="zoom-in"><img src="https://iconlogovector.com/uploads/images/2024/06/lg-66644da6ef24c-BTN-Bank-Tabungan.webp" alt="Logo Bank BTN"><p>Bank BTN</p></div>
+                    <div class="logo-card" data-category="bank" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Bank_Mandiri_logo_2016.svg/2560px-Bank_Mandiri_logo_2016.svg.png" alt="Logo PT Bank Mandiri"><p>PT Bank Mandiri</p></div>
+
+                    <div class="logo-card" data-category="sekolah" data-aos="zoom-in"><div class="logo-fallback">SMKN 1 ANDORA</div><p>SMK NEGERI 1 ANDORA</p></div>
+                    <div class="logo-card" data-category="sekolah" data-aos="zoom-in"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStLLbrXDStgqVhkfyUFhIYfWDizfLROQz4NQ&s" alt="Logo SMK BALI MANDARA"><p>SMK BALI MANDARA</p></div>
+                    <div class="logo-card" data-category="sekolah" data-aos="zoom-in"><img src="https://upload.wikimedia.org/wikipedia/ban/0/0e/Logo_SMAN_Bali_Mandara.png" alt="Logo SMA BALI MANDARA"><p>SMA BALI MANDARA</p></div>
+                    <div class="logo-card" data-category="sekolah" data-aos="zoom-in"><div class="logo-fallback">LPPK</div><p>LPPK AL-MALIK TUMARITIS</p></div>
+                    <div class="logo-card" data-category="sekolah" data-aos="zoom-in"><img src="https://www.stikom-bali.ac.id/id/wp-content/uploads/2020/08/ITB-RESMI-MINI.png" alt="Logo LPK Dharma dan ITB STIKOM Bali"><p>LPK Dharma dan ITB STIKOM Bali</p></div>
+                    <div class="logo-card" data-category="sekolah" data-aos="zoom-in"><img src="https://www.stikom-bali.ac.id/id/wp-content/uploads/2020/08/ITB-RESMI-MINI.png" alt="Logo LPK Dharma, ITB STIKOM dan SMK Bali Mandara"><p>LPK Dharma, ITB STIKOM dan SMK Bali Mandara</p></div>
+
+                    <div class="logo-card" data-category="media" data-aos="zoom-in"><img src="https://www.balipost.com/wp-content/uploads/2017/08/logo-besar-stroke-putih.png" alt="Logo BALI POST"><p>BALI POST</p></div>
+                    <div class="logo-card" data-category="media" data-aos="zoom-in"><img src="https://img.mbizmarket.co.id/company_buyers/thumbs/343x343/2020/08/14/4e21b25e7115558c9cbdda3b4931623b.jpg" alt="Logo FAJAR BALI"><p>FAJAR BALI</p></div>
+                    <div class="logo-card" data-category="media" data-aos="zoom-in"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple6/v4/1d/22/a6/1d22a69d-70b8-a37f-b31c-237256a0f9eb/source/512x512bb.jpg" alt="Logo HARIAN DENPOST"><p>HARIAN DENPOST</p></div>
+                    <div class="logo-card" data-category="media" data-aos="zoom-in"><img src="https://static.promediateknologi.id/promedia-2/network/142/desktop/images/logo.png?v=29" alt="Logo HARIAN POS BALI"><p>HARIAN POS BALI</p></div>
+                    <div class="logo-card" data-category="media" data-aos="zoom-in"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDjCo4bJGTE7vsfdiItRaoWdalK4_a3xdTAA&s" alt="Logo POS BALI"><p>POS BALI</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+    <div class="footer-container">
+        <div class="footer-cta-box" data-aos="zoom-in-up">
+            <div class="cta-text">
+                <h3 data-lang="footer_cta_title">Siap Memulai Perjalanan Akademik Anda?</h3>
+                <p data-lang="footer_cta_desc">Jadilah bagian dari komunitas intelektual kami dan raih masa depan gemilang.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="https://siap.stikom-bali.ac.id/" target="_blank" class="cta-button" data-lang="footer_cta_btn">Daftar Sekarang</a>
+            </div>
+        </div>
+
+        <div class="footer-main-info">
+            <div class="footer-identity">
+                <img src="img/LogoITB.png" alt="Logo ITB STIKOM Bali" class="footer-logo">
+                <div class="footer-separator"></div>
+                <p class="footer-brand-text" data-lang="pascasarjana_brand_footer">PASCA<br>SARJANA</p>
+            </div>
+
+            <div class="footer-address">
+                <h4><i class='bx bxs-map'></i> <span data-lang="footer_alamat_title">Alamat Kampus</span></h4>
+                <p>Jl. Raya Puputan No. 86 Renon, Denpasar, Bali</p>
+            </div>
+            
+            <div class="footer-social">
+                <h4 data-lang="footer_social_title">Terhubung Dengan Kami</h4>
+                <div class="social-links">
+                    <a href="#" target="_blank" title="Instagram" class="instagram"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" target="_blank" title="WhatsApp" class="whatsapp"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="mailto:pascasarjana@stikom-bali.ac.id" title="Email"><i class='bx bxs-envelope'></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; All Rights Reserved 2025, Pusat Komputer dan Jaringan ITB STIKOM Bali</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script> <script>
+        // --- Objek Terjemahan Khusus Halaman Kerjasama ---
+        const pageLanguageContent = {
+            id: {
+                page_title: "Kerjasama - Pascasarjana ITB STIKOM Bali",
+                kerjasama_title: "Jaringan Kemitraan Strategis",
+                kerjasama_subtitle: "Kami percaya kolaborasi adalah kunci inovasi. Berikut adalah daftar institusi, perusahaan, dan organisasi yang telah bekerjasama dengan kami untuk memajukan pendidikan dan teknologi.",
+                featured_title: "Mitra Unggulan & Afiliasi Program",
+                featured_inibis: "Inkubator Bisnis (INIBIS)",
+                all_partners_title: "Seluruh Mitra Kerjasama",
+                filter_all: "Semua (78)",
+                filter_pt_int: "PT Internasional",
+                filter_pt_nas: "PT Nasional",
+                filter_gov: "Pemerintah & Yayasan",
+                filter_bumn: "BUMN",
+                filter_corp: "Korporat Swasta",
+                filter_bank: "Bank",
+                filter_school: "SMA/SMK & LPK",
+                filter_media: "Media"
+            },
+            en: {
+                page_title: "Partnerships - ITB STIKOM Bali Postgraduate",
+                kerjasama_title: "Strategic Partnership Network",
+                kerjasama_subtitle: "We believe collaboration is the key to innovation. Here is a list of institutions, companies, and organizations that have partnered with us to advance education and technology.",
+                featured_title: "Featured Partners & Program Affiliations",
+                featured_inibis: "Business Incubator (INIBIS)",
+                all_partners_title: "All Partners",
+                filter_all: "All (78)",
+                filter_pt_int: "Int'l Universities",
+                filter_pt_nas: "National Universities",
+                filter_gov: "Government & Foundations",
+                filter_bumn: "State-Owned Enterprises",
+                filter_corp: "Private Corporations",
+                filter_bank: "Banking",
+                filter_school: "Schools & Institutes",
+                filter_media: "Media"
+            }
+        };
+
+        // --- Fungsi untuk Menerapkan Terjemahan di Halaman Ini ---
+        function setPageLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-lang');
+                // Cek dulu di objek terjemahan halaman ini
+                if (pageLanguageContent[lang] && pageLanguageContent[lang][key]) {
+                    el.innerHTML = pageLanguageContent[lang][key];
+                }
+                // Jika tidak ada, biarkan script.js utama yang menanganinya (untuk header/footer)
+            });
+            // Ganti judul tab browser
+            document.title = pageLanguageContent[lang]['page_title'];
+        }
+
+        // --- Logika Filter dan Inisialisasi ---
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({ duration: 600, once: true });
+
+            // Logika Filter
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const logoCards = document.querySelectorAll('.logo-card');
+            // ... (sisa logika filter Anda)
+
+            // --- Integrasi Bahasa ---
+            // Panggil fungsi terjemahan saat halaman dimuat
+            const savedLanguage = localStorage.getItem('language') || 'id';
+            setPageLanguage(savedLanguage);
+
+            // Tambahkan event listener ke tombol bahasa agar halaman ini ikut berubah
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Beri jeda sedikit agar localStorage sempat diupdate oleh script.js
+                    setTimeout(() => {
+                        const newLang = localStorage.getItem('language') || 'id';
+                        setPageLanguage(newLang);
+                    }, 50);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
