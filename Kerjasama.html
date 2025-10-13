@@ -223,6 +223,143 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script> <script>
+
+        // ===================================================================================
+        // BAGIAN 1: KODE DARI SCRIPT.JS (UNTUK FUNGSI GLOBAL)
+        // ===================================================================================
+
+        // --- Objek Konten Bahasa Global ---
+        const globalLanguageContent = {
+            id: {
+                pascasarjana_brand: "PASCA<br>SARJANA",
+                nav_beranda: "Beranda",
+                nav_tentang: "Tentang Kami",
+                nav_prodi: "Program Studi",
+                nav_akademik: "Akademik",
+                nav_berita: "Berita",
+                nav_kerjasama: "Kerjasama",
+                footer_cta_title: "Siap Memulai Perjalanan Akademik Anda?",
+                footer_cta_desc: "Jadilah bagian dari komunitas intelektual kami dan raih masa depan gemilang.",
+                footer_cta_btn: "Daftar Sekarang",
+                pascasarjana_brand_footer: "PASCA<br>SARJANA",
+                footer_alamat_title: "Alamat Kampus",
+                footer_social_title: "Terhubung Dengan Kami"
+            },
+            en: {
+                pascasarjana_brand: "POST<br>GRADUATE",
+                nav_beranda: "Home",
+                nav_tentang: "About Us",
+                nav_prodi: "Study Program",
+                nav_akademik: "Academic",
+                nav_berita: "News",
+                nav_kerjasama: "Partnership",
+                footer_cta_title: "Ready to Start Your Academic Journey?",
+                footer_cta_desc: "Be a part of our intellectual community and achieve a brilliant future.",
+                footer_cta_btn: "Register Now",
+                pascasarjana_brand_footer: "POST<br>GRADUATE",
+                footer_alamat_title: "Campus Address",
+                footer_social_title: "Connect With Us"
+            }
+        };
+
+        // --- 1. Script untuk Navbar Scroll Effect ---
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(header) {
+                header.classList.toggle('scrolled', window.scrollY > 50);
+            }
+        });
+
+        // --- 2. Fungsi Setup Global ---
+        function setupHamburgerMenu() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-right ul');
+            const icon = hamburger.querySelector('i');
+            if (!hamburger || !navMenu) return;
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('bx-menu');
+                    icon.classList.add('bx-x');
+                } else {
+                    icon.classList.remove('bx-x');
+                    icon.classList.add('bx-menu');
+                }
+            });
+        }
+
+        function setGlobalLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (globalLanguageContent[lang] && globalLanguageContent[lang][key]) {
+                    el.innerHTML = globalLanguageContent[lang][key];
+                }
+            });
+        }
+
+        function setupLanguageSwitcher() {
+            const idButtons = document.querySelectorAll('.lang-btn-id');
+            const enButtons = document.querySelectorAll('.lang-btn-en');
+
+            function updateActiveButtons(lang) {
+                if (lang === 'id') {
+                    idButtons.forEach(btn => btn.classList.add('active'));
+                    enButtons.forEach(btn => btn.classList.remove('active'));
+                } else {
+                    enButtons.forEach(btn => btn.classList.add('active'));
+                    idButtons.forEach(btn => btn.classList.remove('active'));
+                }
+            }
+
+            function applyLanguageChange(lang) {
+                setGlobalLanguage(lang);
+                localStorage.setItem('language', lang);
+                updateActiveButtons(lang);
+            }
+
+            idButtons.forEach(button => {
+                button.addEventListener('click', () => applyLanguageChange('id'));
+            });
+
+            enButtons.forEach(button => {
+                button.addEventListener('click', () => applyLanguageChange('en'));
+            });
+
+            const savedLanguage = localStorage.getItem('language') || 'id';
+            applyLanguageChange(savedLanguage);
+        }
+
+        function setupBackToTopButton() {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            if (!backToTopBtn) return;
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // --- Panggil Fungsi Global Saat Halaman Dimuat ---
+        document.addEventListener('DOMContentLoaded', function() {
+            setupLanguageSwitcher();
+            setupHamburgerMenu();
+            setupBackToTopButton();
+        });
+
+
+        // ===================================================================================
+        // BAGIAN 2: KODE KHUSUS UNTUK HALAMAN KERJASAMA
+        // ===================================================================================
+        
         // --- Objek Terjemahan Khusus Halaman Kerjasama ---
         const pageLanguageContent = {
             id: {
@@ -266,42 +403,70 @@
             const elements = document.querySelectorAll('[data-lang]');
             elements.forEach(el => {
                 const key = el.getAttribute('data-lang');
-                // Cek dulu di objek terjemahan halaman ini
                 if (pageLanguageContent[lang] && pageLanguageContent[lang][key]) {
                     el.innerHTML = pageLanguageContent[lang][key];
                 }
-                // Jika tidak ada, biarkan script.js utama yang menanganinya (untuk header/footer)
             });
-            // Ganti judul tab browser
             document.title = pageLanguageContent[lang]['page_title'];
         }
 
-        // --- Logika Filter dan Inisialisasi ---
+        // --- Logika Filter dan Inisialisasi Halaman Kerjasama ---
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init({ duration: 600, once: true });
 
-            // Logika Filter
             const filterButtons = document.querySelectorAll('.filter-btn');
             const logoCards = document.querySelectorAll('.logo-card');
-            // ... (sisa logika filter Anda)
 
-            // --- Integrasi Bahasa ---
-            // Panggil fungsi terjemahan saat halaman dimuat
-            const savedLanguage = localStorage.getItem('language') || 'id';
-            setPageLanguage(savedLanguage);
+            logoCards.forEach(card => {
+                card.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+            });
 
-            // Tambahkan event listener ke tombol bahasa agar halaman ini ikut berubah
-            const langButtons = document.querySelectorAll('.lang-btn');
-            langButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // Beri jeda sedikit agar localStorage sempat diupdate oleh script.js
-                    setTimeout(() => {
-                        const newLang = localStorage.getItem('language') || 'id';
-                        setPageLanguage(newLang);
-                    }, 50);
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    const filterValue = button.getAttribute('data-filter');
+
+                    logoCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        const shouldShow = (filterValue === 'semua' || filterValue === cardCategory);
+
+                        if (shouldShow) {
+                            card.style.display = 'flex';
+                            setTimeout(() => {
+                                card.style.transform = 'scale(1)';
+                                card.style.opacity = '1';
+                            }, 10);
+                        } else {
+                            card.style.transform = 'scale(0.9)';
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
                 });
             });
+
+            // --- Integrasi Bahasa untuk Halaman Kerjasama ---
+            function runPageLanguageSetup() {
+                const savedLanguage = localStorage.getItem('language') || 'id';
+                setPageLanguage(savedLanguage);
+
+                const langButtons = document.querySelectorAll('.lang-btn');
+                langButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        setTimeout(() => {
+                            const newLang = localStorage.getItem('language') || 'id';
+                            setPageLanguage(newLang);
+                        }, 50);
+                    });
+                });
+            }
+            
+            runPageLanguageSetup();
         });
+
     </script>
 </body>
 </html>
