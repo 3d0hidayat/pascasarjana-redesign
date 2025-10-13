@@ -108,7 +108,6 @@ nav ul li a:hover {
     display: none;
 }
 
-/* REVISI: Grup baru untuk desktop */
 .nav-right-desktop {
     display: flex;
     align-items: center;
@@ -468,7 +467,11 @@ p.footer-brand-text {
         justify-content: center;
         margin-left: 0;
     }
-    .nav-right-desktop { display: none; }
+    
+    /* --- INI PERUBAHANNYA --- */
+    .nav-right-desktop .language-switcher {
+        display: none;
+    }
     
     .hamburger-menu {
         display: block;
@@ -663,4 +666,4 @@ p.footer-brand-text {
         bottom: 20px;
         right: 20px;
     }
-} 
+}
