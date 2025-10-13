@@ -61,14 +61,13 @@ nav {
     align-items: center;
     gap: 15px;
     text-decoration: none;
-    /* REVISI: Mencegah logo memakan terlalu banyak tempat di mobile */
     flex-shrink: 1;
     min-width: 0;
 }
 
 .logo-link-header img {
     height: 45px;
-    flex-shrink: 0; /* Pastikan gambar logo tidak menyusut */
+    flex-shrink: 0; 
 }
 
 .logo-separator {
@@ -89,6 +88,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center; /* REVISI: Pusatkan item secara vertikal */
     gap: 25px; 
 }
 
@@ -103,6 +103,12 @@ nav ul li a {
 nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
+/* REVISI: Sembunyikan pembungkus bendera di desktop */
+.li-language-switcher {
+    display: none;
+}
+
 
 .hamburger-menu {
     display: none;
@@ -333,7 +339,6 @@ footer {
     color: #c0c8e7;
     padding: 60px 0 0 0;
 }
-
 .footer-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -413,24 +418,66 @@ p.footer-brand-text {
 .social-links a.whatsapp:hover { background-color: #25D366; border-color: #25D366; }
 .footer-bottom { padding: 25px 0; text-align: center; font-size: 0.9rem; color: #a0aec0; }
 
+
+/* === Styling Tombol Bahasa Bendera (Desktop) === */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px; /* Jarak dari menu nav utama */
+}
+.lang-btn {
+    background-color: transparent;
+    border: 2px solid transparent;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+.lang-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.lang-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+.lang-btn.active {
+    border-color: #ffffff;
+    opacity: 1;
+    transform: scale(1.05);
+}
+
 /* === Responsiveness (Mobile View) === */
 @media (max-width: 992px) {
     /* --- REVISI FINAL: Navigasi / Header --- */
-    nav {
-        padding: 15px 4%;
+    nav ul .li-language-switcher {
+        display: block; /* Tampilkan elemen bendera di mobile */
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
-    .nav-right {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        flex-shrink: 0; /* Mencegah grup kanan ini menyusut */
+    nav ul .language-switcher {
+        justify-content: center; /* Posisikan bendera di tengah */
+        margin-left: 0;
     }
+    
     .hamburger-menu {
         display: block;
         cursor: pointer;
         font-size: 30px;
         color: white;
+        flex-shrink: 0; /* Pastikan hamburger tidak menyusut */
     }
+
     nav ul {
         display: none;
         position: absolute;
@@ -439,6 +486,7 @@ p.footer-brand-text {
         width: 100%;
         background-color: #0F1F6A;
         flex-direction: column;
+        align-items: center; /* REVISI: Pusatkan semua item menu */
         padding: 20px 0;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     }
@@ -486,24 +534,25 @@ p.footer-brand-text {
     .testimonial-wrapper {
         flex-direction: column;
         gap: 0;
-        padding: 0; /* Hapus padding pada wrapper */
+        padding: 0 15px; /* Beri jarak sisi kiri kanan untuk keseluruhan komponen */
+    }
+    .testimonial-container {
+        width: 100%; /* Pastikan container slider mengambil lebar penuh */
+        overflow: hidden; /* Sembunyikan overflow dari card */
     }
     .testimonial-nav {
         position: absolute;
-        top: 50%;
+        top: 40%; /* Posisikan ulang sedikit ke atas */
         transform: translateY(-50%);
         z-index: 10;
         width: 40px;
         height: 40px;
         font-size: 24px;
     }
-    .testimonial-nav.prev { left: 5px; } /* Beri sedikit jarak dari tepi */
-    .testimonial-nav.next { right: 5px; } /* Beri sedikit jarak dari tepi */
+    .testimonial-nav.prev { left: -5px; } /* Posisikan di luar card */
+    .testimonial-nav.next { right: -5px; } /* Posisikan di luar card */
     .testimonial-card {
-        padding: 30px;
-        /* Tambahkan padding horizontal untuk memberi ruang bagi teks */
-        padding-left: 45px;
-        padding-right: 45px;
+        padding: 30px 20px; /* Atur padding atas-bawah dan kiri-kanan */
     }
     .testimonial-header {
         flex-direction: column;
@@ -573,50 +622,6 @@ p.footer-brand-text {
     }
 }
 
-/* === Styling Tombol Bahasa Bendera === */
-.language-switcher {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.lang-btn {
-    background-color: transparent;
-    border: 2px solid transparent;
-    padding: 0;
-    cursor: pointer;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    opacity: 0.6;
-}
-.lang-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-}
-.lang-btn:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-.lang-btn.active {
-    border-color: #ffffff;
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-@media (max-width: 992px) {
-    .language-switcher {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    nav ul { top: 75px; } /* Sesuaikan posisi menu dropdown jika tinggi navbar berubah */
-}
-
 /* === Styling Tombol Back to Top === */
 #backToTopBtn {
     position: fixed;
@@ -658,4 +663,4 @@ p.footer-brand-text {
         bottom: 20px;
         right: 20px;
     }
-}
+} 
