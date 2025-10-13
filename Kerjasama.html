@@ -223,12 +223,9 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script> <script>
-
         // ===================================================================================
-        // BAGIAN 1: KODE DARI SCRIPT.JS (UNTUK FUNGSI GLOBAL)
+        // BAGIAN 1: KODE GLOBAL (DARI SCRIPT.JS)
         // ===================================================================================
-
-        // --- Objek Konten Bahasa Global ---
         const globalLanguageContent = {
             id: {
                 pascasarjana_brand: "PASCA<br>SARJANA",
@@ -262,31 +259,7 @@
             }
         };
 
-        // --- 1. Script untuk Navbar Scroll Effect ---
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if(header) {
-                header.classList.toggle('scrolled', window.scrollY > 50);
-            }
-        });
-
-        // --- 2. Fungsi Setup Global ---
-        function setupHamburgerMenu() {
-            const hamburger = document.querySelector('.hamburger-menu');
-            const navMenu = document.querySelector('.nav-right ul');
-            const icon = hamburger.querySelector('i');
-            if (!hamburger || !navMenu) return;
-            hamburger.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                if (navMenu.classList.contains('active')) {
-                    icon.classList.remove('bx-menu');
-                    icon.classList.add('bx-x');
-                } else {
-                    icon.classList.remove('bx-x');
-                    icon.classList.add('bx-menu');
-                }
-            });
-        }
+        
 
         function setGlobalLanguage(lang) {
             const elements = document.querySelectorAll('[data-lang]');
@@ -301,7 +274,6 @@
         function setupLanguageSwitcher() {
             const idButtons = document.querySelectorAll('.lang-btn-id');
             const enButtons = document.querySelectorAll('.lang-btn-en');
-
             function updateActiveButtons(lang) {
                 if (lang === 'id') {
                     idButtons.forEach(btn => btn.classList.add('active'));
@@ -311,23 +283,15 @@
                     idButtons.forEach(btn => btn.classList.remove('active'));
                 }
             }
-
             function applyLanguageChange(lang) {
                 setGlobalLanguage(lang);
                 localStorage.setItem('language', lang);
                 updateActiveButtons(lang);
+                // Trigger custom event untuk memberitahu script lain bahwa bahasa berubah
+                document.dispatchEvent(new CustomEvent('languageChange', { detail: { lang: lang } }));
             }
-
-            idButtons.forEach(button => {
-                button.addEventListener('click', () => applyLanguageChange('id'));
-            });
-
-            enButtons.forEach(button => {
-                button.addEventListener('click', () => applyLanguageChange('en'));
-            });
-
-            const savedLanguage = localStorage.getItem('language') || 'id';
-            applyLanguageChange(savedLanguage);
+            idButtons.forEach(button => button.addEventListener('click', () => applyLanguageChange('id')));
+            enButtons.forEach(button => button.addEventListener('click', () => applyLanguageChange('en')));
         }
 
         function setupBackToTopButton() {
@@ -341,26 +305,21 @@
                 }
             });
             backToTopBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
 
-        // --- Panggil Fungsi Global Saat Halaman Dimuat ---
-        document.addEventListener('DOMContentLoaded', function() {
-            setupLanguageSwitcher();
-            setupHamburgerMenu();
-            setupBackToTopButton();
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(header) {
+                header.classList.toggle('scrolled', window.scrollY > 50);
+            }
         });
 
 
         // ===================================================================================
-        // BAGIAN 2: KODE KHUSUS UNTUK HALAMAN KERJASAMA
+        // BAGIAN 2: KODE KHUSUS HALAMAN KERJASAMA
         // ===================================================================================
-        
-        // --- Objek Terjemahan Khusus Halaman Kerjasama ---
         const pageLanguageContent = {
             id: {
                 page_title: "Kerjasama - Pascasarjana ITB STIKOM Bali",
@@ -398,7 +357,6 @@
             }
         };
 
-        // --- Fungsi untuk Menerapkan Terjemahan di Halaman Ini ---
         function setPageLanguage(lang) {
             const elements = document.querySelectorAll('[data-lang]');
             elements.forEach(el => {
@@ -410,61 +368,61 @@
             document.title = pageLanguageContent[lang]['page_title'];
         }
 
-        // --- Logika Filter dan Inisialisasi Halaman Kerjasama ---
+        // ===================================================================================
+        // BAGIAN 3: SATU EVENT LISTENER UNTUK SEMUA FUNGSI
+        // ===================================================================================
         document.addEventListener('DOMContentLoaded', function() {
+            // Inisialisasi Fungsi Global
             AOS.init({ duration: 600, once: true });
+            setupLanguageSwitcher();
+            setupBackToTopButton();
 
+            // Inisialisasi Fungsi Khusus Halaman Kerjasama
             const filterButtons = document.querySelectorAll('.filter-btn');
             const logoCards = document.querySelectorAll('.logo-card');
 
-            logoCards.forEach(card => {
-                card.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
-            });
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-                    const filterValue = button.getAttribute('data-filter');
-
-                    logoCards.forEach(card => {
-                        const cardCategory = card.getAttribute('data-category');
-                        const shouldShow = (filterValue === 'semua' || filterValue === cardCategory);
-
-                        if (shouldShow) {
-                            card.style.display = 'flex';
-                            setTimeout(() => {
-                                card.style.transform = 'scale(1)';
-                                card.style.opacity = '1';
-                            }, 10);
-                        } else {
-                            card.style.transform = 'scale(0.9)';
-                            card.style.opacity = '0';
-                            setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
-                        }
-                    });
+            if (filterButtons.length > 0 && logoCards.length > 0) {
+                logoCards.forEach(card => {
+                    card.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
                 });
-            });
 
-            // --- Integrasi Bahasa untuk Halaman Kerjasama ---
-            function runPageLanguageSetup() {
-                const savedLanguage = localStorage.getItem('language') || 'id';
-                setPageLanguage(savedLanguage);
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+                        const filterValue = button.getAttribute('data-filter');
 
-                const langButtons = document.querySelectorAll('.lang-btn');
-                langButtons.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        setTimeout(() => {
-                            const newLang = localStorage.getItem('language') || 'id';
-                            setPageLanguage(newLang);
-                        }, 50);
+                        logoCards.forEach(card => {
+                            const cardCategory = card.getAttribute('data-category');
+                            const shouldShow = (filterValue === 'semua' || filterValue === cardCategory);
+
+                            if (shouldShow) {
+                                card.style.display = 'flex';
+                                setTimeout(() => {
+                                    card.style.transform = 'scale(1)';
+                                    card.style.opacity = '1';
+                                }, 10);
+                            } else {
+                                card.style.transform = 'scale(0.9)';
+                                card.style.opacity = '0';
+                                setTimeout(() => {
+                                    card.style.display = 'none';
+                                }, 300);
+                            }
+                        });
                     });
                 });
             }
+
+            // Inisialisasi Bahasa (Global & Halaman ini)
+            const savedLanguage = localStorage.getItem('language') || 'id';
+            setGlobalLanguage(savedLanguage);
+            setPageLanguage(savedLanguage);
             
-            runPageLanguageSetup();
+            // Dengarkan perubahan bahasa dari script global
+            document.addEventListener('languageChange', function(e) {
+                setPageLanguage(e.detail.lang);
+            });
         });
 
     </script>
@@ -473,4 +431,3 @@
     </button>
 </body>
 </html>
-
