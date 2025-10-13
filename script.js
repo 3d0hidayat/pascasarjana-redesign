@@ -162,7 +162,6 @@ const languageContent = {
     }
 };
 
-
 // --- 1. Script untuk Navbar Scroll Effect ---
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
@@ -227,33 +226,40 @@ function setLanguage(lang) {
     document.documentElement.lang = lang;
 }
 
+// --- REVISI: Fungsi Setup untuk Pilihan Bahasa (Desktop & Mobile) ---
 function setupLanguageSwitcher() {
-    const langIdBtn = document.getElementById('lang-id');
-    const langEnBtn = document.getElementById('lang-en');
+    const idButtons = document.querySelectorAll('.lang-btn-id');
+    const enButtons = document.querySelectorAll('.lang-btn-en');
 
-    langIdBtn.addEventListener('click', () => {
-        setLanguage('id');
-        localStorage.setItem('language', 'id');
-        langIdBtn.classList.add('active');
-        langEnBtn.classList.remove('active');
+    function updateActiveButtons(lang) {
+        if (lang === 'id') {
+            idButtons.forEach(btn => btn.classList.add('active'));
+            enButtons.forEach(btn => btn.classList.remove('active'));
+        } else {
+            enButtons.forEach(btn => btn.classList.add('active'));
+            idButtons.forEach(btn => btn.classList.remove('active'));
+        }
+    }
+
+    idButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            setLanguage('id');
+            localStorage.setItem('language', 'id');
+            updateActiveButtons('id');
+        });
     });
 
-    langEnBtn.addEventListener('click', () => {
-        setLanguage('en');
-        localStorage.setItem('language', 'en');
-        langEnBtn.classList.add('active');
-        langIdBtn.classList.remove('active');
+    enButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            setLanguage('en');
+            localStorage.setItem('language', 'en');
+            updateActiveButtons('en');
+        });
     });
 
     const savedLanguage = localStorage.getItem('language') || 'id';
     setLanguage(savedLanguage);
-    if (savedLanguage === 'en') {
-        langEnBtn.classList.add('active');
-        langIdBtn.classList.remove('active');
-    } else {
-        langIdBtn.classList.add('active');
-        langEnBtn.classList.remove('active');
-    }
+    updateActiveButtons(savedLanguage);
 }
 
 function setupBrosurModal() {
@@ -383,30 +389,23 @@ function setupTestimonialSlider() {
     });
 }
 
-// --- BARU: Fungsi untuk Tombol Back to Top ---
 function setupBackToTopButton() {
     const backToTopBtn = document.getElementById('backToTopBtn');
-
     if (!backToTopBtn) return;
-
-    // Tampilkan tombol saat scroll
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) { // Muncul setelah scroll 300px
+        if (window.scrollY > 300) {
             backToTopBtn.classList.add('show');
         } else {
             backToTopBtn.classList.remove('show');
         }
     });
-
-    // Scroll ke atas saat diklik
     backToTopBtn.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth' // Animasi scroll halus
+            behavior: 'smooth'
         });
     });
 }
-
 
 // --- Event Listener Utama ---
 document.addEventListener('DOMContentLoaded', function() {
@@ -420,5 +419,5 @@ document.addEventListener('DOMContentLoaded', function() {
     setupAkreditasiModal();
     setupTestimonialSlider();
     setupHamburgerMenu();
-    setupBackToTopButton(); // <-- PANGGIL FUNGSI BARU DI SINI
+    setupBackToTopButton();
 });
