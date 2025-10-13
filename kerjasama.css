@@ -14,7 +14,7 @@
     color: #ffffff;
     position: relative;
     background-image: 
-        linear-gradient(rgba(15, 31, 106, 0.85), rgba(15, 31, 106, 0.85)),
+        linear-gradient(rgba(5, 11, 36, 0.85), rgba(15, 31, 106, 0.85)),
         url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070');
     background-size: cover;
     background-position: center;
@@ -240,4 +240,5 @@
     .logo-card p {
         font-size: 0.8rem;
     }
+
 }
