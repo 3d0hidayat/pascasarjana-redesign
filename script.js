@@ -421,3 +421,121 @@ document.addEventListener('DOMContentLoaded', function() {
     setupHamburgerMenu();
     setupBackToTopButton();
 });
+
+
+
+     
+
+        // ===================================================================================
+        // BAGIAN 2: KODE KHUSUS HALAMAN KERJASAMA
+        // ===================================================================================
+        const pageLanguageContent = {
+            id: {
+                page_title: "Kerjasama - Pascasarjana ITB STIKOM Bali",
+                kerjasama_title: "Jaringan Kemitraan Strategis",
+                kerjasama_subtitle: "Kami percaya kolaborasi adalah kunci inovasi. Berikut adalah daftar institusi, perusahaan, dan organisasi yang telah bekerjasama dengan kami untuk memajukan pendidikan dan teknologi.",
+                featured_title: "Mitra Unggulan & Afiliasi Program",
+                featured_inibis: "Inkubator Bisnis (INIBIS)",
+                all_partners_title: "Seluruh Mitra Kerjasama",
+                filter_all: "Semua (78)",
+                filter_pt_int: "PT Internasional",
+                filter_pt_nas: "PT Nasional",
+                filter_gov: "Pemerintah & Yayasan",
+                filter_bumn: "BUMN",
+                filter_corp: "Korporat Swasta",
+                filter_bank: "Bank",
+                filter_school: "SMA/SMK & LPK",
+                filter_media: "Media"
+            },
+            en: {
+                page_title: "Partnerships - ITB STIKOM Bali Postgraduate",
+                kerjasama_title: "Strategic Partnership Network",
+                kerjasama_subtitle: "We believe collaboration is the key to innovation. Here is a list of institutions, companies, and organizations that have partnered with us to advance education and technology.",
+                featured_title: "Featured Partners & Program Affiliations",
+                featured_inibis: "Business Incubator (INIBIS)",
+                all_partners_title: "All Partners",
+                filter_all: "All (78)",
+                filter_pt_int: "Int'l Universities",
+                filter_pt_nas: "National Universities",
+                filter_gov: "Government & Foundations",
+                filter_bumn: "State-Owned Enterprises",
+                filter_corp: "Private Corporations",
+                filter_bank: "Banking",
+                filter_school: "Schools & Institutes",
+                filter_media: "Media"
+            }
+        };
+
+        function setPageLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (pageLanguageContent[lang] && pageLanguageContent[lang][key]) {
+                    el.innerHTML = pageLanguageContent[lang][key];
+                }
+            });
+            document.title = pageLanguageContent[lang]['page_title'];
+        }
+
+        // ===================================================================================
+        // BAGIAN 3: SATU EVENT LISTENER UNTUK SEMUA FUNGSI
+        // ===================================================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inisialisasi Fungsi Global
+            AOS.init({ duration: 600, once: true });
+            setupLanguageSwitcher();
+            setupBackToTopButton();
+
+            // Inisialisasi Fungsi Khusus Halaman Kerjasama
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const logoCards = document.querySelectorAll('.logo-card');
+
+            if (filterButtons.length > 0 && logoCards.length > 0) {
+                logoCards.forEach(card => {
+                    card.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+                });
+
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+                        const filterValue = button.getAttribute('data-filter');
+
+                        logoCards.forEach(card => {
+                            const cardCategory = card.getAttribute('data-category');
+                            const shouldShow = (filterValue === 'semua' || filterValue === cardCategory);
+
+                            if (shouldShow) {
+                                card.style.display = 'flex';
+                                setTimeout(() => {
+                                    card.style.transform = 'scale(1)';
+                                    card.style.opacity = '1';
+                                }, 10);
+                            } else {
+                                card.style.transform = 'scale(0.9)';
+                                card.style.opacity = '0';
+                                setTimeout(() => {
+                                    card.style.display = 'none';
+                                }, 300);
+                            }
+                        });
+
+                        // REVISI: Baris ini ditambahkan untuk memperbaiki masalah
+                        // footer yang tidak muncul setelah filter diklik.
+                        AOS.refresh();
+                    });
+                });
+            }
+
+            // Inisialisasi Bahasa (Global & Halaman ini)
+            const savedLanguage = localStorage.getItem('language') || 'id';
+            setGlobalLanguage(savedLanguage);
+            setPageLanguage(savedLanguage);
+            
+            // Dengarkan perubahan bahasa dari script global
+            document.addEventListener('languageChange', function(e) {
+                setPageLanguage(e.detail.lang);
+            });
+        });
+
+    
