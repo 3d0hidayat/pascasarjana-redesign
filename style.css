@@ -11,6 +11,12 @@ body {
     color: #333;
 }
 
+/* +++ TAMBAHKAN KODE DI BAWAH INI +++ */
+main {
+    overflow-x: hidden;
+}
+/* +++ BATAS KODE TAMBAHAN +++ */
+
 a {
     text-decoration: none;
     color: inherit;
@@ -548,11 +554,11 @@ p.footer-brand-text {
         display: none;
     }
     .hamburger-menu {
-        display: block;
-        cursor: pointer;
-        font-size: 30px;
-        color: white;
-    }
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+}
 
     /* --- Hero Section --- */
     .hero-content h1 { font-size: 2.2rem; }
