@@ -721,3 +721,425 @@ p.footer-brand-text {
         right: 20px;
     }
 }
+
+
+
+/* === TENTANG KAMI PAGE STYLING === */
+
+/* --- Page Header --- */
+.tentang-page .page-header {
+    padding: 120px 20px 60px 20px;
+    margin-top: 75px; /* Tinggi header */
+    background-image: linear-gradient(rgba(1, 10, 35, 0.85), rgba(1, 10, 35, 0.85)), url('img/ajar1.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
+.page-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+.page-header p {
+    font-size: 1.2rem;
+    color: #c0c8e7;
+}
+
+/* Nav Link Active */
+nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* --- Sambutan Section --- */
+.sambutan-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: center;
+}
+.sambutan-foto img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.sambutan-teks p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #555;
+}
+.sambutan-signature {
+    margin-top: 25px;
+    border-left: 3px solid #007BFF;
+    padding-left: 20px;
+}
+.sambutan-signature h4 {
+    font-weight: 600;
+    color: #0F1F6A;
+}
+.sambutan-signature p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* --- Sejarah, Visi, Misi Section --- */
+.sejarah {
+    margin-bottom: 50px;
+}
+.visi-misi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.visi-card, .misi-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+.visi-card i, .misi-card i {
+    font-size: 40px;
+    color: #007BFF;
+    background-color: #e7f0ff;
+    padding: 15px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.visi-card h3, .misi-card h3 {
+    font-size: 1.8rem;
+    color: #0F1F6A;
+    margin-bottom: 15px;
+}
+.misi-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+.misi-card ul li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 10px;
+}
+.misi-card ul li::before {
+    content: '\2713'; /* Checkmark icon */
+    position: absolute;
+    left: 0;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+
+/* --- Struktur Organisasi Section --- */
+.struktur-image-container {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #ffffff;
+}
+.struktur-image-container img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* --- Dosen Section --- */
+.dosen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.dosen-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.dosen-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+.dosen-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: top center;
+}
+.dosen-info {
+    padding: 20px;
+}
+.dosen-info h3 {
+    font-size: 1.2rem;
+    color: #0F1F6A;
+    margin-bottom: 8px;
+}
+.dosen-jabatan {
+    font-weight: 600;
+    color: #007BFF;
+    margin-bottom: 5px;
+}
+.dosen-keahlian {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* --- Responsiveness for Tentang Kami Page --- */
+@media (max-width: 992px) {
+    .page-header {
+        margin-top: 0;
+        padding-top: 100px; /* Kompensasi header fixed */
+    }
+}
+@media (max-width: 768px) {
+    .page-header h1 { font-size: 2.2rem; }
+    .sambutan-grid { grid-template-columns: 1fr; }
+    .sambutan-foto { max-width: 300px; margin: 0 auto 30px auto; }
+    .sambutan-teks .section-title { text-align: center !important; }
+    .visi-misi-grid { grid-template-columns: 1fr; }
+}
+
+
+/* === Styling Halaman Kerjasama === */
+
+/* Mendorong konten di bawah navbar transparan */
+.kerjasama-page .page-header {
+    padding-top: 155px; /* (Tinggi navbar ~75px + Jarak 80px) */
+    padding-bottom: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Styling Header Halaman */
+.page-header {
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    background-image: 
+        linear-gradient(rgba(5, 11, 36, 0.85), rgba(15, 31, 106, 0.85)),
+        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+}
+
+/* REVISI: Teks Header Dibuat Lebih Menarik */
+.page-header h1 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    max-width: 850px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Judul untuk setiap sub-seksi */
+.sub-section-title {
+    font-size: 2.2rem;
+    color: #010a23;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Styling Mitra Unggulan */
+.featured-partners {
+    background-color: #ffffff;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.featured-card {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-color: #007BFF;
+}
+
+.featured-card img {
+    max-height: 100px;
+    max-width: 80%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.featured-card h3 {
+    font-size: 1.3rem;
+    color: #0F1F6A;
+}
+
+
+/* Styling Galeri Mitra */
+.partner-gallery {
+    background-color: #f8f9fa;
+}
+
+/* Tombol Filter */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: #e9ecef;
+    color: #0F1F6A;
+}
+
+.filter-btn.active {
+    background-color: #0F1F6A;
+    color: white;
+    border-color: #0F1F6A;
+    box-shadow: 0 5px 15px rgba(15, 31, 106, 0.2);
+}
+
+/* Galeri Logo */
+.logo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 25px;
+}
+
+.logo-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 150px;
+}
+
+.logo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-color: #007BFF;
+}
+
+.logo-card img {
+    max-width: 100%;
+    max-height: 60px;
+    margin-bottom: 15px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.logo-card:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.logo-card p {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+/* Styling untuk logo fallback (inisial) */
+.logo-fallback {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 15px;
+    background-color: #e9ecef;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0F1F6A;
+}
+.logo-fallback i {
+    font-size: 40px;
+    color: #0F1F6A;
+}
+
+
+/* === Desain Responsif untuk Mobile === */
+@media (max-width: 768px) {
+    .kerjasama-page .page-header {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    .sub-section-title {
+        font-size: 1.8rem;
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-btn {
+        padding: 8px 18px;
+        font-size: 0.8rem;
+    }
+
+    .logo-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+
+    .logo-card {
+        height: 120px;
+        padding: 15px;
+    }
+
+    .logo-card img {
+        max-height: 45px;
+    }
+    .logo-card p {
+        font-size: 0.8rem;
+    }
+}
