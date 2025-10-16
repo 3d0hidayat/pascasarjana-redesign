@@ -11,6 +11,16 @@ const languageContent = {
         nav_akademik: "Akademik",
         nav_berita: "Berita",
         nav_kerjasama: "Kerjasama",
+        nav_kegiatan: "Kegiatan",
+        nav_media: "Media",
+        nav_pengumuman: "Pengumuman",
+        nav_sambutan_rektor: "Sambutan Rektor",
+        nav_sejarah: "Sejarah",
+        nav_visi_misi: "Visi & Misi",
+        nav_sambutan_direktur: "Sambutan Direktur",
+        nav_profil_prodi: "Profil Prodi S2",
+        nav_kalender_akademik: "Kalender Akademik",
+        nav_kurikulum: "Kurikulum",
         
         // Halaman Hero
         hero_program: "PROGRAM PASCASARJANA",
@@ -130,6 +140,16 @@ const languageContent = {
         nav_akademik: "Academic",
         nav_berita: "News",
         nav_kerjasama: "Partnership",
+        nav_kegiatan: "Activities",
+        nav_media: "Media",
+        nav_pengumuman: "Announcements",
+        nav_sambutan_rektor: "Rector's Welcome",
+        nav_sejarah: "History",
+        nav_visi_misi: "Vision & Mission",
+        nav_sambutan_direktur: "Director's Welcome",
+        nav_profil_prodi: "Master's Profile",
+        nav_kalender_akademik: "Academic Calendar",
+        nav_kurikulum: "Curriculum",
 
         // Hero Page
         hero_program: "POSTGRADUATE PROGRAM",
@@ -246,7 +266,6 @@ const languageContent = {
 // BAGIAN 2: FUNGSI-FUNGSI GLOBAL
 // =========================================================================
 
-// --- Fungsi Navbar Scroll Effect ---
 function setupNavbarScroll() {
     const header = document.querySelector('header');
     if (header) {
@@ -256,7 +275,6 @@ function setupNavbarScroll() {
     }
 }
 
-// --- Fungsi Hamburger Menu ---
 function setupHamburgerMenu() {
     const hamburger = document.querySelector('.hamburger-menu');
     const navMenu = document.querySelector('nav ul');
@@ -270,7 +288,6 @@ function setupHamburgerMenu() {
     });
 }
 
-// --- Fungsi Utama Penggantian Bahasa ---
 function setLanguage(lang) {
     const elements = document.querySelectorAll('[data-lang]');
     elements.forEach(el => {
@@ -281,11 +298,9 @@ function setLanguage(lang) {
     });
     document.documentElement.lang = lang;
     
-    // Dispatch custom event untuk memberitahu fungsi lain (seperti tombol read more)
     document.dispatchEvent(new CustomEvent('languageChange', { detail: { lang: lang } }));
 }
 
-// --- Fungsi Pengaturan Tombol Pilihan Bahasa ---
 function setupLanguageSwitcher() {
     const idButtons = document.querySelectorAll('.lang-btn-id');
     const enButtons = document.querySelectorAll('.lang-btn-en');
@@ -309,7 +324,6 @@ function setupLanguageSwitcher() {
     updateActiveButtons(savedLanguage);
 }
 
-// --- Fungsi Tombol Kembali ke Atas ---
 function setupBackToTopButton() {
     const backToTopBtn = document.getElementById('backToTopBtn');
     if (!backToTopBtn) return;
@@ -323,29 +337,99 @@ function setupBackToTopButton() {
     });
 }
 
+function setupMobileDropdowns() {
+    const dropdowns = document.querySelectorAll('.nav-right .dropdown > a');
+
+    dropdowns.forEach(dropdownToggle => {
+        dropdownToggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 992) {
+                e.preventDefault();
+                const parentLi = this.parentElement;
+                
+                document.querySelectorAll('.nav-right .dropdown.open').forEach(openDropdown => {
+                    if (openDropdown !== parentLi) {
+                        openDropdown.classList.remove('open');
+                    }
+                });
+
+                parentLi.classList.toggle('open');
+            }
+        });
+    });
+}
+
+// =========================================================================
+// FUNGSI UNTUK NAVBAR MAGIC LINE
+// =========================================================================
+function setupMagicLine() {
+    const navList = document.querySelector('.nav-right > ul');
+    if (!navList) return;
+
+    const magicLine = navList.querySelector('.magic-line');
+    const navItems = navList.querySelectorAll('li:not(.li-language-switcher)');
+    if (!magicLine || navItems.length === 0) return;
+    
+    let activeItem = null;
+    if (document.body.classList.contains('beranda-page')) {
+        activeItem = navList.querySelector('.nav-beranda');
+    } else if (document.body.classList.contains('tentang-page')) {
+        activeItem = navList.querySelector('.nav-tentang');
+    } else if (document.body.classList.contains('prodi-page')) {
+        activeItem = navList.querySelector('.nav-prodi');
+    } else if (document.body.classList.contains('akademik-page')) {
+        activeItem = navList.querySelector('.nav-akademik');
+    } else if (document.body.classList.contains('berita-page')) {
+        activeItem = navList.querySelector('.nav-berita');
+    } else if (document.body.classList.contains('kerjasama-page')) {
+        activeItem = navList.querySelector('.nav-kerjasama');
+    }
+
+    function positionLine(target) {
+        if (target) {
+            magicLine.style.width = `${target.offsetWidth}px`;
+            magicLine.style.left = `${target.offsetLeft}px`;
+        }
+    }
+
+    setTimeout(() => {
+        positionLine(activeItem);
+    }, 100);
+
+    navItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            positionLine(item);
+        });
+    });
+
+    navList.addEventListener('mouseleave', () => {
+        positionLine(activeItem);
+    });
+
+    window.addEventListener('resize', () => {
+        setTimeout(() => {
+            positionLine(activeItem);
+        }, 100);
+    });
+}
+
 
 // =========================================================================
 // BAGIAN 3: FUNGSI-FUNGSI SPESIFIK UNTUK SETIAP HALAMAN
 // =========================================================================
 
-// --- Fungsi untuk Animasi Neuron di Hero Section (Halaman Beranda) ---
 function setupHeroCanvas() {
     const heroCanvas = document.getElementById('neuron-canvas');
     if (!heroCanvas) return;
-
     const ctx = heroCanvas.getContext('2d');
     heroCanvas.width = heroCanvas.parentElement.clientWidth;
     heroCanvas.height = heroCanvas.parentElement.clientHeight;
-    
     let particlesArray;
     const mouse = { x: null, y: null, radius: (heroCanvas.height / 80) * (heroCanvas.width / 80) };
-
     window.addEventListener('mousemove', (event) => {
         let rect = heroCanvas.getBoundingClientRect();
         mouse.x = event.clientX - rect.left;
         mouse.y = event.clientY - rect.top;
     });
-    
     class Particle {
         constructor(x, y, dirX, dirY, size, color) {
             this.x = x; this.y = y; this.directionX = dirX; this.directionY = dirY;
@@ -360,7 +444,6 @@ function setupHeroCanvas() {
         update() {
             if (this.x > heroCanvas.width || this.x < 0) this.directionX = -this.directionX;
             if (this.y > heroCanvas.height || this.y < 0) this.directionY = -this.directionY;
-            
             let dx = mouse.x - this.x;
             let dy = mouse.y - this.y;
             let distance = Math.sqrt(dx * dx + dy * dy);
@@ -375,7 +458,6 @@ function setupHeroCanvas() {
             this.draw();
         }
     }
-    
     function init() {
         particlesArray = [];
         let numParticles = (heroCanvas.height * heroCanvas.width) / 9000;
@@ -388,7 +470,6 @@ function setupHeroCanvas() {
             particlesArray.push(new Particle(x, y, dirX, dirY, size, '#8C9EFF'));
         }
     }
-
     function connect() {
         for (let a = 0; a < particlesArray.length; a++) {
             for (let b = a; b < particlesArray.length; b++) {
@@ -406,54 +487,43 @@ function setupHeroCanvas() {
             }
         }
     }
-
     function animate() {
         requestAnimationFrame(animate);
         ctx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
         particlesArray.forEach(p => p.update());
         connect();
     }
-
     window.addEventListener('resize', () => {
         heroCanvas.width = heroCanvas.parentElement.clientWidth;
         heroCanvas.height = heroCanvas.parentElement.clientHeight;
         mouse.radius = (heroCanvas.height / 80) * (heroCanvas.width / 80);
         init();
     });
-
     window.addEventListener('mouseout', () => { mouse.x = undefined; mouse.y = undefined; });
-    
     init();
     animate();
 }
 
-// --- Fungsi untuk Modal ---
 function setupModal(buttonId, modalId, closeClass) {
     const openBtn = document.getElementById(buttonId);
     const modalOverlay = document.getElementById(modalId);
     if (!openBtn || !modalOverlay) return;
-    
     const closeBtn = modalOverlay.querySelector(closeClass);
-    
     const openModal = (e) => { e.preventDefault(); modalOverlay.classList.add('active'); };
     const closeModal = () => modalOverlay.classList.remove('active');
-
     openBtn.addEventListener('click', openModal);
     if(closeBtn) closeBtn.addEventListener('click', closeModal);
     modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
 }
 
-// --- Fungsi untuk Tab ---
 function setupTabs(tabButtonsClass, tabPanelsClass, activeClass) {
     const tabs = document.querySelectorAll(tabButtonsClass);
     const panels = document.querySelectorAll(tabPanelsClass);
     if (tabs.length === 0) return;
-
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             tabs.forEach(item => item.classList.remove(activeClass));
             tab.classList.add(activeClass);
-            
             const targetId = tab.getAttribute('data-tab');
             panels.forEach(panel => {
                 panel.classList.toggle(activeClass, panel.id === `${targetId}-panel` || panel.id === `tab-${targetId}-content`);
@@ -462,28 +532,24 @@ function setupTabs(tabButtonsClass, tabPanelsClass, activeClass) {
     });
 }
 
-// --- Fungsi untuk Slider Testimoni ---
 function setupTestimonialSlider() {
     const track = document.querySelector('.testimonial-track');
     if (!track) return;
-    
     const cards = Array.from(track.children);
     const nextButton = document.getElementById('nextBtn');
     const prevButton = document.getElementById('prevBtn');
     const dotsContainer = document.getElementById('testimonialDots');
     const totalCards = cards.length;
-    
-    // Cloning for infinite loop effect
+    if (totalCards === 0) return;
+
     const firstClone = cards[0].cloneNode(true);
     const lastClone = cards[totalCards - 1].cloneNode(true);
     track.appendChild(firstClone);
     track.insertBefore(lastClone, cards[0]);
-    
     let currentIndex = 1;
     let cardWidth = track.parentElement.getBoundingClientRect().width;
     track.style.transform = `translateX(-${cardWidth * currentIndex}px)`;
 
-    // Create dots
     for (let i = 0; i < totalCards; i++) {
         const dot = document.createElement('button');
         dot.classList.add('testimonial-dot');
@@ -491,7 +557,6 @@ function setupTestimonialSlider() {
         dotsContainer.appendChild(dot);
     }
     const dots = Array.from(dotsContainer.children);
-
     const updateDots = () => {
         dots.forEach(dot => dot.classList.remove('active'));
         dots[(currentIndex - 1 + totalCards) % totalCards].classList.add('active');
@@ -528,12 +593,10 @@ function setupTestimonialSlider() {
     });
 }
 
-// --- Fungsi Tombol 'Baca Selengkapnya' (Halaman Tentang) ---
 function setupSambutanReadMore() {
     const readMoreBtn = document.getElementById('read-more-btn');
     const fullText = document.querySelector('.sambutan-full-text');
     if (!readMoreBtn || !fullText) return;
-
     const updateButtonText = () => {
         const lang = localStorage.getItem('language') || 'id';
         const isOpen = fullText.classList.contains('open');
@@ -541,46 +604,64 @@ function setupSambutanReadMore() {
         const icon = isOpen ? "<i class='bx bx-chevron-up'></i>" : "<i class='bx bx-chevron-down'></i>";
         readMoreBtn.innerHTML = `${text} ${icon}`;
     };
-
     readMoreBtn.addEventListener('click', () => {
         fullText.classList.toggle('open');
         readMoreBtn.classList.toggle('open');
         updateButtonText();
     });
-    
-    // Update text when language changes
     document.addEventListener('languageChange', updateButtonText);
-    updateButtonText(); // Initial call
+    updateButtonText();
 }
 
-// --- Fungsi Filter Galeri Mitra (Halaman Kerjasama) ---
 function setupPartnerFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const logoCards = document.querySelectorAll('.logo-card');
     if (filterButtons.length === 0 || logoCards.length === 0) return;
-
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-            
             const filterValue = button.getAttribute('data-filter');
             logoCards.forEach(card => {
                 const cardCategory = card.getAttribute('data-category');
                 const shouldShow = (filterValue === 'semua' || filterValue === cardCategory);
                 card.style.display = shouldShow ? 'flex' : 'none';
             });
-            AOS.refresh(); // Refresh AOS to re-animate visible items
+            AOS.refresh();
         });
     });
 }
 
+// Tambahkan fungsi ini
+function setupInteractiveTimeline() {
+    const timelineNav = document.querySelector('.timeline-navigation');
+    if (!timelineNav) return;
+
+    const dots = timelineNav.querySelectorAll('.timeline-dot');
+    const progress = timelineNav.querySelector('.timeline-progress');
+    const contentCards = document.querySelectorAll('.timeline-content-card');
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            // Hapus kelas aktif dari semua
+            dots.forEach(d => d.classList.remove('active'));
+            contentCards.forEach(c => c.classList.remove('active'));
+
+            // Tambahkan kelas aktif ke yang diklik
+            dot.classList.add('active');
+            const eventId = dot.getAttribute('data-event');
+            document.getElementById(eventId).classList.add('active');
+
+            // Pindahkan progress bar
+            progress.style.left = `calc(${index * 25}% + 5px)`;
+        });
+    });
+}
 
 // =========================================================================
 // BAGIAN 4: EVENT LISTENER UTAMA (SATU UNTUK SEMUA)
 // =========================================================================
 document.addEventListener('DOMContentLoaded', function() {
-    // Inisialisasi AOS
     AOS.init({ duration: 800, once: true });
 
     // Panggil semua fungsi setup global
@@ -588,9 +669,10 @@ document.addEventListener('DOMContentLoaded', function() {
     setupHamburgerMenu();
     setupLanguageSwitcher();
     setupBackToTopButton();
+    setupMobileDropdowns();
+    setupMagicLine();
 
     // Panggil fungsi setup spesifik halaman
-    // Fungsi ini akan berjalan hanya jika elemen yang diperlukan ada di halaman
     setupHeroCanvas();
     setupModal('brosur-btn', 'brosur-modal', '.close-button');
     setupModal('open-akreditasi-modal-text', 'akreditasi-modal-overlay', '.akreditasi-close-button');
@@ -599,4 +681,5 @@ document.addEventListener('DOMContentLoaded', function() {
     setupTestimonialSlider();
     setupSambutanReadMore();
     setupPartnerFilter();
+    setupInteractiveTimeline()
 });
