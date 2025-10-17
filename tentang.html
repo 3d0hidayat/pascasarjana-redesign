@@ -88,57 +88,124 @@
     </section>
 
     <section id="sejarah">
-        <div class="section-container">
-            <h2 class="section-title" data-aos="fade-up">Sejarah Singkat</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Perjalanan dari sebuah gagasan hingga menjadi institusi terdepan di Bali.</p>
+        <div id="timeline-display-area">
+            <div id="initial-text">
+                <h2 class="section-title">Sejarah Singkat</h2>
+                <p class="section-subtitle">Perjalanan dari sebuah gagasan hingga menjadi institusi terdepan di Bali.</p>
+            </div>
+            <div id="event-text" class="hidden">
+                <h3></h3>
+                <p></p>
+            </div>
+        </div>
+        <div id="lineCont">
+            <div id="line"></div>
+        </div>
+        
+        <div id="vertical-timeline-container"></div>
+    </section>
 
-            <div class="interactive-timeline" data-aos="fade-up" data-aos-delay="200">
-                <div class="timeline-navigation">
-                    <div class="timeline-progress"></div>
-                    <button class="timeline-dot active" data-event="event1"><span class="year">2000</span></button>
-                    <button class="timeline-dot" data-event="event2"><span class="year">2001</span></button>
-                    <button class="timeline-dot" data-event="event3"><span class="year">2002</span></button>
-                    <button class="timeline-dot" data-event="event4"><span class="year">2009</span></button>
+    <section id="visi-misi">
+   <div class="section-container">
+        <h2 class="section-title" data-aos="fade-up">Visi dan Misi</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Fondasi yang memandu kami dalam menyelenggarakan pendidikan unggul dan tujuan yang ingin kami capai.</p>
+        
+        <div class="vm-grid">
+            <div class="vm-card card-visi" data-aos="fade-right" data-aos-delay="200">
+                <div class="vm-icon-wrapper">
+                    <i class='bx bxs-low-vision'></i>
                 </div>
+                <div class="vm-details">
+                    <h3 data-lang="visi_title">Visi</h3>
+                    <p data-lang="visi_text">Menjadi Program Studi Magister Komputer yang unggul dan berdaya saing global dalam bidang teknologi informasi dan bisnis pada tahun 2035.</p>
+                </div>
+            </div>
 
-                <div class="timeline-content-wrapper">
-                    <div class="timeline-content-card active" id="event1">
-                        <h3>Gagasan Awal</h3>
-                        <p>Para praktisi pendidikan bertemu, menyadari perlunya perguruan tinggi TIK jenjang sarjana di Bali seiring pesatnya perkembangan teknologi.</p>
-                    </div>
-                    <div class="timeline-content-card" id="event2">
-                        <h3>Pendirian Yayasan</h3>
-                        <p>Yayasan Widya Dharma Shanti resmi didirikan pada 20 Mei 2001 sebagai Badan Penyelenggara Perguruan Tinggi Swasta untuk mewujudkan gagasan tersebut.</p>
-                    </div>
-                    <div class="timeline-content-card" id="event3">
-                        <h3>Izin Resmi & Awal Perkuliahan</h3>
-                        <p>ITB STIKOM Bali resmi berdiri pada 10 Agustus 2002. Dua prodi pertama dibuka: Sistem Komputer (S1) dan Manajemen Informatika (D3).</p>
-                    </div>
-                    <div class="timeline-content-card" id="event4">
-                        <h3>Penambahan Program Studi</h3>
-                        <p>Merespon kebutuhan industri, program studi baru Sistem Informasi (S1) resmi ditambahkan, memperkuat posisi STIKOM Bali di dunia pendidikan.</p>
-                    </div>
+            <div class="vm-card card-misi" data-aos="fade-left" data-aos-delay="200">
+                <div class="vm-icon-wrapper">
+                    <i class='bx bxs-rocket'></i>
+                </div>
+                <div class="vm-details">
+                    <h3 data-lang="misi_title">Misi</h3>
+                    <ul>
+                        <li data-lang="misi_li1">Menyelenggarakan pendidikan magister yang berkualitas tinggi dan relevan dengan perkembangan industri.</li>
+                        <li data-lang="misi_li2">Melaksanakan penelitian inovatif yang memberikan kontribusi pada ilmu pengetahuan dan solusi teknologi.</li>
+                        <li data-lang="misi_li3">Mengembangkan kegiatan pengabdian kepada masyarakat berbasis teknologi informasi.</li>
+                        <li data-lang="misi_li4">Membangun jaringan kerjasama yang luas dengan industri, pemerintah, dan institusi pendidikan lainnya.</li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="visi-misi" style="background-color: #f8f9fa;">
-       <div class="section-container">
-            <div class="visi-misi-grid">
-                <div class="visi-card" data-aos="fade-right" data-aos-delay="100"><i class='bx bxs-low-vision'></i><h3 data-lang="visi_title">Visi</h3><p data-lang="visi_text">Menjadi Program Studi Magister Komputer yang unggul dan berdaya saing global dalam bidang teknologi informasi dan bisnis pada tahun 2035.</p></div>
-                <div class="misi-card" data-aos="fade-left" data-aos-delay="100"><i class='bx bxs-rocket'></i><h3 data-lang="misi_title">Misi</h3><ul><li data-lang="misi_li1">Menyelenggarakan pendidikan magister yang berkualitas tinggi dan relevan dengan perkembangan industri.</li><li data-lang="misi_li2">Melaksanakan penelitian inovatif yang memberikan kontribusi pada ilmu pengetahuan dan solusi teknologi.</li><li data-lang="misi_li3">Mengembangkan kegiatan pengabdian kepada masyarakat berbasis teknologi informasi.</li><li data-lang="misi_li4">Membangun jaringan kerjasama yang luas dengan industri, pemerintah, dan institusi pendidikan lainnya.</li></ul></div>
+    <section id="struktur">
+    <div class="section-container">
+        <h2 class="section-title" data-aos="fade-up" data-lang="struktur_title">Struktur Organisasi</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100" data-lang="struktur_subtitle">Dikelola oleh tim yang profesional dan berdedikasi untuk memberikan pelayanan akademik terbaik.</p>
+        
+        <div class="struktur-grid">
+            <div class="struktur-level" data-aos="fade-up">
+                <div class="struktur-card">
+                    <img src="img/rektor.jpg" alt="Foto Rektor" class="struktur-img">
+                    <h4 class="struktur-nama">Dr. Dadang Hermawan</h4>
+                    <p class="struktur-jabatan">Rektor ITB STIKOM Bali</p>
+                </div>
+            </div>
+
+            <div class="struktur-level" data-aos="fade-up">
+                <div class="struktur-card">
+                    <img src="img/wk1.jpg" alt="Foto Wakil Rektor I" class="struktur-img">
+                    <h4 class="struktur-nama">Dr. Roy Rudolf Huizen, S.T., M.T.</h4>
+                    <p class="struktur-jabatan">Wakil Rektor I</p>
+                </div>
+            </div>
+            
+            <div class="struktur-level" data-aos="fade-up">
+                <div class="struktur-card">
+                    <img src="img/direktur.jpg" alt="Foto Direktur Pascasarjana" class="struktur-img">
+                    <h4 class="struktur-nama">Dr. Dandy Pramana Hostiadi, S.Kom., M.T.</h4>
+                    <p class="struktur-jabatan">Direktur Pascasarjana</p>
+                </div>
+            </div>
+            
+            <div class="struktur-level level-split" data-aos="fade-up">
+                <div class="struktur-card">
+                    <img src="img/anonim.jpg" alt="Foto Koordinator Akademik" class="struktur-img">
+                    <h4 class="struktur-nama">Yusade Setiawan Kusuma, S.E., M.Si.</h4>
+                    <p class="struktur-jabatan">Koordinator Akademik Pascasarjana</p>
+                </div>
+                <div class="struktur-card">
+                    <img src="img/anonim.jpg" alt="Foto Sekretaris Prodi" class="struktur-img">
+                    <h4 class="struktur-nama">Gusti Ayu Ratna Lestari, S.Kom., M.Kom.</h4>
+                    <p class="struktur-jabatan">Sekretaris Prodi Pascasarjana & GKM</p>
+                </div>
+            </div>
+
+            <div class="struktur-level level-split" data-aos="fade-up">
+                <div class="struktur-card">
+                    <img src="img/anonim.jpg" alt="Foto Staf Pascasarjana" class="struktur-img">
+                    <h4 class="struktur-nama">Wira Anggara Darmawan, A.md.Kom.</h4>
+                    <p class="struktur-jabatan">Staf Pascasarjana</p>
+                </div>
+                <div class="struktur-card">
+                    <img src="img/anonim.jpg" alt="Foto Staf Pascasarjana" class="struktur-img">
+                    <h4 class="struktur-nama">Ni Luh Putu Wulandewi, S.Kom</h4>
+                    <p class="struktur-jabatan">Staf Pascasarjana</p>
+                </div>
             </div>
         </div>
-    </section>
-
-    <section id="struktur" class="section-container">
-       <h2 class="section-title" data-aos="fade-up" data-lang="struktur_title">Struktur Organisasi</h2><p class="section-subtitle" data-aos="fade-up" data-aos-delay="100" data-lang="struktur_subtitle">Dikelola oleh tim yang profesional dan berdedikasi untuk memberikan pelayanan akademik terbaik.</p><div class="struktur-image-container" data-aos="fade-up" data-aos-delay="200"><img src="img/struktur-organisasi-placeholder.png" alt="Bagan Struktur Organisasi Pascasarjana"></div>
-    </section>
+    </div>
+</section>
 
     <section id="dosen" style="background-color: #f8f9fa;">
-       <div class="section-container"><h2 class="section-title" data-aos="fade-up" data-lang="dosen_title">Direktori Dosen</h2><p class="section-subtitle" data-aos="fade-up" data-aos-delay="100" data-lang="dosen_subtitle">Didukung oleh para akademisi dan praktisi ahli di bidangnya.</p><div class="dosen-grid"></div></div>
-    </section>
+   <div class="section-container">
+        <h2 class="section-title" data-aos="fade-up" data-lang="dosen_title">Direktori Dosen</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100" data-lang="dosen_subtitle">Didukung oleh para akademisi dan praktisi ahli di bidangnya.</p>
+        <div class="dosen-grid">
+            </div>
+    </div>
+</section>
 </main>
 
 <footer>
@@ -147,6 +214,7 @@
 
 <button id="backToTopBtn" title="Kembali ke atas"><i class='bx bx-chevron-up'></i></button>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="script.js"></script>
 
