@@ -1,5 +1,5 @@
 // =========================================================================
-// [REVISI TOTAL] SEMUA KONTEN BAHASA DISATUKAN DI SINI
+// OBJEK KONTEN UNTUK MULTI-BAHASA
 // =========================================================================
 const languageContent = {
     id: {
@@ -94,7 +94,7 @@ const languageContent = {
         btn_read_more: "Baca Selengkapnya",
         btn_read_less: "Baca Lebih Sedikit",
         sejarah_title: "Sejarah Singkat",
-        sejarah_subtitle: "Program Pascasarjana Magister Komputer di ITB STIKOM Bali didirikan pada tahun 2010 sebagai jawaban atas meningkatnya kebutuhan akan tenaga ahli tingkat lanjut di bidang sistem informasi. Sejak awal, kami fokus pada pengembangan kurikulum yang adaptif dan riset yang inovatif. Hingga kini, kami telah meluluskan ratusan magister yang berkontribusi signifikan di berbagai industri, baik nasional maupun internasional.",
+        sejarah_subtitle: "Perjalanan dari sebuah gagasan hingga menjadi institusi terdepan di Bali.",
         visi_title: "Visi",
         visi_text: "Menjadi Program Studi Magister Komputer yang unggul dan berdaya saing global dalam bidang teknologi informasi dan bisnis pada tahun 2035.",
         misi_title: "Misi",
@@ -223,7 +223,7 @@ const languageContent = {
         btn_read_more: "Read More",
         btn_read_less: "Read Less",
         sejarah_title: "Brief History",
-        sejarah_subtitle: "The Master of Computer Science Postgraduate Program at ITB STIKOM Bali was established in 2010 in response to the growing need for advanced experts in the field of information systems. From the beginning, we have focused on developing an adaptive curriculum and innovative research. To date, we have graduated hundreds of masters who have contributed significantly to various industries, both nationally and internationally.",
+        sejarah_subtitle: "The journey from an idea to becoming the leading institution in Bali.",
         visi_title: "Vision",
         visi_text: "To become a superior and globally competitive Master of Computer Science Program in the field of information technology and business by 2035.",
         misi_title: "Mission",
@@ -337,26 +337,7 @@ function setupBackToTopButton() {
     });
 }
 
-function setupMobileDropdowns() {
-    const dropdowns = document.querySelectorAll('.nav-right .dropdown > a');
 
-    dropdowns.forEach(dropdownToggle => {
-        dropdownToggle.addEventListener('click', function(e) {
-            if (window.innerWidth <= 992) {
-                e.preventDefault();
-                const parentLi = this.parentElement;
-                
-                document.querySelectorAll('.nav-right .dropdown.open').forEach(openDropdown => {
-                    if (openDropdown !== parentLi) {
-                        openDropdown.classList.remove('open');
-                    }
-                });
-
-                parentLi.classList.toggle('open');
-            }
-        });
-    });
-}
 
 // =========================================================================
 // FUNGSI UNTUK NAVBAR MAGIC LINE
@@ -632,31 +613,259 @@ function setupPartnerFilter() {
     });
 }
 
-// Tambahkan fungsi ini
+// =========================================================================
+// [REVISI FINAL] FUNGSI ADAPTIF UNTUK TIMELINE DESKTOP & MOBILE
+// =========================================================================
 function setupInteractiveTimeline() {
-    const timelineNav = document.querySelector('.timeline-navigation');
-    if (!timelineNav) return;
+    const sejarahSection = document.getElementById('sejarah');
+    if (!sejarahSection) return;
 
-    const dots = timelineNav.querySelectorAll('.timeline-dot');
-    const progress = timelineNav.querySelector('.timeline-progress');
-    const contentCards = document.querySelectorAll('.timeline-content-card');
+    const timelineEvents = [
+        { 
+            year: "2010", 
+            title: "Pendirian Program", 
+            description: "Program Pascasarjana Magister Komputer di ITB STIKOM Bali resmi didirikan sebagai jawaban atas meningkatnya kebutuhan tenaga ahli IT tingkat lanjut di era digital.",
+            imageUrl: "url('https://images.unsplash.com/photo-1549923746-c502d488b3ea?q=80&w=2071')"
+        },
+        { 
+            year: "2015", 
+            title: "Akreditasi Pertama", 
+            description: "Meraih akreditasi 'Baik' dari BAN-PT untuk pertama kalinya, membuktikan komitmen kami terhadap kualitas pendidikan yang unggul dan terstandar.",
+            imageUrl: "url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070')"
+        },
+        { 
+            year: "2018", 
+            title: "Pengembangan Kurikulum", 
+            description: "Melakukan pembaruan kurikulum yang signifikan untuk menyesuaikan dengan tren industri seperti Data Science dan Cyber Security, memastikan relevansi lulusan.",
+            imageUrl: "url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2069')"
+        },
+        { 
+            year: "2022", 
+            title: "Kolaborasi Internasional", 
+            description: "Menjalin kerjasama strategis dengan beberapa universitas di Asia Tenggara untuk program pertukaran pelajar dan riset bersama.",
+            imageUrl: "url('https://images.unsplash.com/photo-1549923746-c502d488b3ea?q=80&w=2071')"
+        },
+        { 
+            year: "2025", 
+            title: "Peringkat Akreditasi 'Baik Sekali'", 
+            description: "Berhasil meningkatkan status akreditasi menjadi 'Baik Sekali' dari LAM-INFOKOM, sebuah pencapaian yang mengukuhkan posisi kami sebagai program S2 IT terdepan di Bali.",
+            imageUrl: "url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2069')"
+        }
+    ];
+    
+    // === FUNGSI UNTUK MEMBUAT TIMELINE HORIZONTAL (DESKTOP) ===
+    function createHorizontalTimeline() {
+        const line = document.getElementById('line');
+        const initialText = document.getElementById('initial-text');
+        const eventTextContainer = document.getElementById('event-text');
+        
+        // Cek apakah elemen-elemen penting ada
+        if (!line || !initialText || !eventTextContainer) return;
 
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            // Hapus kelas aktif dari semua
-            dots.forEach(d => d.classList.remove('active'));
-            contentCards.forEach(c => c.classList.remove('active'));
+        const eventTitle = eventTextContainer.querySelector('h3');
+        const eventDescription = eventTextContainer.querySelector('p');
+        const allCircles = [];
 
-            // Tambahkan kelas aktif ke yang diklik
-            dot.classList.add('active');
-            const eventId = dot.getAttribute('data-event');
-            document.getElementById(eventId).classList.add('active');
+        // Kosongkan line dari circle sebelumnya untuk mencegah duplikasi
+        line.innerHTML = ''; 
 
-            // Pindahkan progress bar
-            progress.style.left = `calc(${index * 25}% + 5px)`;
+        timelineEvents.forEach((event, i) => {
+            const circle = document.createElement('div');
+            circle.className = 'circle';
+            circle.style.left = `calc(${(i / (timelineEvents.length - 1)) * 100}% - 10px)`;
+            
+            circle.dataset.title = event.title;
+            circle.dataset.description = event.description;
+            circle.dataset.year = event.year;
+            circle.dataset.imageUrl = event.imageUrl;
+
+            circle.addEventListener('mouseover', () => circle.classList.add('hover'));
+            circle.addEventListener('mouseout', () => circle.classList.remove('hover'));
+
+            circle.addEventListener('click', () => {
+                if (circle.classList.contains('active')) return;
+                document.querySelectorAll('.circle.active').forEach(c => c.classList.remove('active'));
+                circle.classList.add('active');
+                sejarahSection.style.backgroundImage = circle.dataset.imageUrl;
+                initialText.classList.add('hidden');
+                eventTextContainer.classList.add('hidden');
+                setTimeout(() => {
+                    eventTitle.innerHTML = `<span class="timeline-year">${event.year}:</span> ${event.title}`;
+                    eventDescription.textContent = event.description;
+                    eventTextContainer.classList.remove('hidden');
+                }, 250);
+            });
+
+            line.appendChild(circle);
+            allCircles.push(circle);
+        });
+
+        if (allCircles.length > 0) {
+            sejarahSection.style.backgroundImage = "url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=2069')";
+            eventTextContainer.classList.add('hidden');
+            initialText.classList.remove('hidden');
+        }
+    }
+
+    // === FUNGSI UNTUK MEMBUAT TIMELINE VERTIKAL (MOBILE) ===
+    function createVerticalTimeline() {
+        const verticalContainer = document.getElementById('vertical-timeline-container');
+        if (!verticalContainer) return;
+
+        // Kosongkan kontainer untuk mencegah duplikasi konten
+        verticalContainer.innerHTML = ''; 
+
+        // Tambahkan judul "Sejarah Singkat" untuk mobile
+        verticalContainer.innerHTML += `
+            <h2 class="section-title" data-aos="fade-up">Sejarah Singkat</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Perjalanan dari sebuah gagasan hingga menjadi institusi terdepan di Bali.</p>
+        `;
+
+        // Tambahkan setiap event sejarah
+        timelineEvents.forEach((event, i) => {
+            const item = document.createElement('div');
+            item.className = 'vertical-timeline-item';
+            item.setAttribute('data-aos', 'fade-up');
+            item.setAttribute('data-aos-delay', i * 100);
+
+            item.innerHTML = `
+                <div class="timeline-item-dot"></div>
+                <div class="timeline-item-content">
+                    <h3><span class="timeline-year">${event.year}</span> - ${event.title}</h3>
+                    <p>${event.description}</p>
+                </div>
+            `;
+            verticalContainer.appendChild(item);
+        });
+    }
+
+    // === KONTROL UTAMA ===
+    // Buat konten untuk KEDUA versi timeline. 
+    // CSS akan secara otomatis menampilkan yang benar berdasarkan ukuran layar.
+    createHorizontalTimeline();
+    createVerticalTimeline();
+}
+
+// =========================================================================
+// FUNGSI UNTUK VISI & MISI INTERAKTIF
+// =========================================================================
+function setupVisiMisiTabs() {
+    const tabContainer = document.querySelector('.vm-tabs');
+    if (!tabContainer) return;
+
+    const tabButtons = tabContainer.querySelectorAll('.vm-tab-button');
+    const contentArea = document.querySelector('.vm-content-area');
+
+    // Set background awal
+    const initialActiveTab = tabContainer.querySelector('.vm-tab-button.active');
+    if(initialActiveTab) {
+        contentArea.style.backgroundImage = `url('${initialActiveTab.dataset.bg}')`;
+    }
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Hentikan jika tab sudah aktif
+            if (button.classList.contains('active')) return;
+
+            // Update tombol tab
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Update background
+            const newBg = button.dataset.bg;
+            contentArea.style.backgroundImage = `url('${newBg}')`;
+
+            // Update panel konten
+            const targetPanelId = button.dataset.tab + '-panel';
+            const allPanels = document.querySelectorAll('.vm-panel');
+            allPanels.forEach(panel => panel.classList.remove('active'));
+            document.getElementById(targetPanelId).classList.add('active');
         });
     });
 }
+
+// =========================================================================
+// FUNGSI UNTUK VISI & MISI (KLIK-REVEAL)
+// =========================================================================
+function setupVisiMisiReveal() {
+    const cards = document.querySelectorAll('.vm-card');
+    if (!cards) return;
+
+    cards.forEach(card => {
+        card.addEventListener('click', function() {
+            // "this" merujuk pada elemen kartu yang diklik
+            this.classList.toggle('active');
+        });
+    });
+}
+
+// =========================================================================
+// FUNGSI UNTUK MEMBUAT DIREKTORI DOSEN SECARA DINAMIS
+// =========================================================================
+function populateLecturerDirectory() {
+    // Anda bisa mengganti data ini dengan mudah di masa depan
+    const lecturersData = [
+        {
+            name: "Prof. Dr. I Made Bandem",
+            imageUrl: "img/2.jpg",
+            scholarUrl: "https://scholar.google.com/citations?user=xxxxxx"
+        },
+        {
+            name: "Dr. Dadang Hermawan",
+            imageUrl: "img/rektor.jpg",
+            scholarUrl: "https://scholar.google.com/citations?hl=id&user=o5p089MAAAAJ"
+        },
+        {
+            name: "Dr. Roy Rudolf Huizen, S.T., M.T.",
+            imageUrl: "img/wk1.jpg",
+            scholarUrl: "https://scholar.google.com/citations?user=HGeM9xwAAAAJ&hl=id&oi=ao"
+        },
+        {
+            name: "Dr. Dandy Pramana Hostiadi, S.Kom., M.T.",
+            imageUrl: "img/direktur.jpg",
+            scholarUrl: "https://scholar.google.com/citations?user=igzQmigAAAAJ&hl=id&oi=ao"
+        },
+        {
+            name: "Dr. Evi Triandini, S.P., M.Eng.",
+            imageUrl: "img/4.jpg",
+            scholarUrl: "https://scholar.google.com/citations?user=cSku1GYAAAAJ&hl=id&oi=ao"
+        },
+        {
+            name: "Dr. Gede Angga Pradipta, S.T., M.Eng.",
+            imageUrl: "img/5.jpg",
+            scholarUrl: "https://scholar.google.com/citations?user=0icLc7QAAAAJ&hl=id&oi=ao"
+        },
+        {
+            name: "Dr. Putri Srinadi, S.E, M.M.Kom.",
+            imageUrl: "img/7.jpg",
+            scholarUrl: "https://scholar.google.com/citations?user=98py7mQAAAAJ&hl=id&oi=ao"
+        }
+    ];
+
+    const dosenGrid = document.querySelector('.dosen-grid');
+    if (!dosenGrid) return; // Hentikan jika grid tidak ditemukan
+
+    dosenGrid.innerHTML = ''; // Kosongkan grid sebelum diisi
+
+    lecturersData.forEach(lecturer => {
+        const card = document.createElement('a');
+        card.href = lecturer.scholarUrl;
+        card.target = "_blank"; // Buka di tab baru
+        card.rel = "noopener noreferrer";
+        card.className = "dosen-card";
+        card.setAttribute('data-aos', 'fade-up');
+
+        card.innerHTML = `
+            <img src="${lecturer.imageUrl}" alt="Foto ${lecturer.name}" class="dosen-img">
+            <div class="dosen-overlay">
+                <h4 class="dosen-name">${lecturer.name}</h4>
+            </div>
+        `;
+
+        dosenGrid.appendChild(card);
+    });
+}
+
 
 // =========================================================================
 // BAGIAN 4: EVENT LISTENER UTAMA (SATU UNTUK SEMUA)
@@ -669,7 +878,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setupHamburgerMenu();
     setupLanguageSwitcher();
     setupBackToTopButton();
-    setupMobileDropdowns();
     setupMagicLine();
 
     // Panggil fungsi setup spesifik halaman
@@ -681,5 +889,8 @@ document.addEventListener('DOMContentLoaded', function() {
     setupTestimonialSlider();
     setupSambutanReadMore();
     setupPartnerFilter();
-    setupInteractiveTimeline()
+    setupInteractiveTimeline();
+    setupVisiMisiTabs();
+    setupVisiMisiReveal();
+    populateLecturerDirectory();
 });
