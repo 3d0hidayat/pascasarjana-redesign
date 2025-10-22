@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Halaman Tidak Ditemukan</title>
+    <link rel="icon" type="image/png" href="./img/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page-wrapper">
+
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html" class="logo-link-header">
+                <img src="img/LogoITB.png" alt="Logo ITB STIKOM Bali">
+                <div class="logo-separator"></div>
+                <span class="header-brand-text">PASCA<br>SARJANA</span>
+            </a>
+        </div>
+    
+        <div class="nav-right">
+            <ul>
+                <span class="magic-line"></span> <li class="nav-beranda"><a href="index.html" data-lang="nav_beranda">Beranda</a></li>
+                
+                <li class="dropdown nav-tentang">
+                    <a href="tentang.html" data-lang="nav_tentang">Tentang Kami <i class='bx bx-chevron-down dropdown-icon'></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="tentang.html#sambutan" data-lang="nav_sambutan_rektor">Sambutan Rektor</a></li>
+                        <li><a href="tentang.html#sejarah" data-lang="nav_sejarah">Sejarah</a></li>
+                        <li><a href="tentang.html#visi-misi" data-lang="nav_visi_misi">Visi & Misi</a></li>
+                        <li><a href="tentang.html#struktur" data-lang="nav_struktur">Struktur Organisasi</a></li>
+                        <li><a href="tentang.html#dosen" data-lang="nav_dosen">Direktori Dosen</a></li>
+                    </ul>
+                </li>
+    
+                <li class="dropdown nav-prodi">
+                    <a href="prodi.html" data-lang="nav_prodi">Program Studi <i class='bx bx-chevron-down dropdown-icon'></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="prodi.html#sambutan-direktur" data-lang="nav_sambutan_direktur">Sambutan Direktur</a></li>
+                        <li><a href="prodi.html#profil-prodi" data-lang="nav_profil_prodi">Profil Prodi S2</a></li>
+                    </ul>
+                </li>
+    
+                <li class="dropdown nav-akademik">
+                    <a href="Akademik.html" data-lang="nav_akademik">Akademik <i class='bx bx-chevron-down dropdown-icon'></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" data-lang="nav_kalender_akademik">Kalender Akademik</a></li>
+                        <li><a href="#" data-lang="nav_kurikulum">Kurikulum</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-admisi"><a href="admisi.html" data-lang="nav_admisi">Admisi</a></li>
+    
+                <li class="dropdown nav-berita">
+                     <a href="Berita.html" data-lang="nav_berita">Berita <i class='bx bx-chevron-down dropdown-icon'></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" data-lang="nav_kegiatan">Kegiatan</a></li>
+                        <li><a href="#" data-lang="nav_media">Media</a></li>
+                        <li><a href="#" data-lang="nav_pengumuman">Pengumuman</a></li>
+                    </ul>
+                </li>
+    
+                <li class="nav-kerjasama"><a href="Kerjasama.html" data-lang="nav_kerjasama">Kerjasama</a></li>
+    
+                <li class="li-language-switcher">
+                    <div class="language-switcher">
+                        <button id="lang-id-mobile" class="lang-btn lang-btn-id active">
+                            <img src="img/flag-id.svg" alt="Bahasa Indonesia">
+                        </button>
+                        <button id="lang-en-mobile" class="lang-btn lang-btn-en">
+                            <img src="img/flag-en.svg" alt="English Language">
+                        </button>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="language-switcher-desktop">
+                <button id="lang-id-desktop" class="lang-btn lang-btn-id active">
+                    <img src="img/flag-id.svg" alt="Bahasa Indonesia">
+                </button>
+                <button id="lang-en-desktop" class="lang-btn lang-btn-en">
+                    <img src="img/flag-en.svg" alt="English Language">
+                </button>
+            </div>
+    
+            <div class="hamburger-menu">
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section id="error-page">
+        <div class="error-container">
+            <div class="error-visual">
+                <div class="glitch-text" data-text="404">404</div>
+            </div>
+            <h1 class="error-title">Halaman Tidak Ditemukan</h1>
+            <p class="error-description">
+                Maaf, halaman yang Anda cari mungkin telah dipindahkan, dihapus, atau tidak pernah ada.
+                Silakan periksa kembali URL Anda atau kembali ke beranda.
+            </p>
+            <a href="index.html" class="cta-button">Kembali ke Beranda</a>
+        </div>
+    </section>
+</main>
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+            <p>&copy; All Rights Reserved 2025, Pusat Komputer dan Jaringan ITB STIKOM Bali</p>
+        </div>
+    </div>
+</footer>
+
+<button id="backToTopBtn" title="Kembali ke atas">
+    <i class='bx bx-chevron-up'></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="script.js"></script>
+
+</div>
+</body>
+</html>
