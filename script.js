@@ -17,6 +17,8 @@ const languageContent = {
         nav_sambutan_rektor: "Sambutan Rektor",
         nav_sejarah: "Sejarah",
         nav_visi_misi: "Visi & Misi",
+        nav_struktur: "Struktur Organisasi",
+        nav_dosen: "Direktori Dosen",
         nav_sambutan_direktur: "Sambutan Direktur",
         nav_profil_prodi: "Profil Prodi S2",
         nav_kalender_akademik: "Kalender Akademik",
@@ -107,6 +109,98 @@ const languageContent = {
         dosen_title: "Direktori Dosen",
         dosen_subtitle: "Didukung oleh para akademisi dan praktisi ahli di bidangnya.",
 
+
+        prodi_title: "Program Studi",
+    prodi_subtitle: "Detail Program Magister Sistem Informasi di ITB STIKOM Bali.",
+    sambutan_direktur_title: "Sambutan Direktur Pascasarjana",
+    sambutan_direktur_nama: "Dr. Dandy Pramana Hostiadi, S.Kom., M.T.",
+    sambutan_direktur_jabatan: "Direktur Pascasarjana",
+    sambutan_direktur_p1: "<strong>Salam ITB STIKOM Bali, Always The First</strong><br>Program Magister Sistem Informasi ITB STIKOM Bali didirikan dengan tujuan untuk membekali mahasiswa dengan keterampilan dan pengetahuan yang relevan dalam menghadapi tantangan di era digital. Kami menawarkan kurikulum yang komprehensif, mencakup empat konsentrasi utama: Cyber Security, Data Science, Enterprise System, dan Medical Informatics. Setiap konsentrasi dirancang untuk memberikan keahlian yang mendalam dan pemikiran kritis berdasarkan daya analisis yang kuat sesuai dengan kebutuhan industri saat ini dengan pemecahan yang ilmiah logis sesuai methodology yang logis.",
+sambutan_direktur_p2: "Kami bangga dengan capaian akreditasi yang telah dicapai, yang mencerminkan komitmen kami dalam menyediakan pendidikan berkualitas tinggi. Program kami tidak hanya fokus pada penguasaan teori, tetapi juga pada pengembangan kemampuan melalui kurikulum yang tepat selaras dengan visi keilmuan pada program studi, melalui pembelajaran berbasis project, penguasaan metodologi penelitian, yang berkolaborasi dengan industri skala nasional dan internasional.",
+sambutan_direktur_p3: "Pelaksanaan Tri Darma Perguruan Tinggi dilaksanakan dengan menerapkan 5 pilar seperti kredibel, transparan, akuntabel, tanggung jawab dan adil. Dosen pengajar memiliki spesifikasi keilmuan sesuai bidang ilmu yang didalami dengan fokus penelitian terbagi menjadi empat, yaitu Cyber Security, Medical Informatin, Data Science dan Enterprise System untuk menunjang kegiatan akademik dan menciptakan lulusan yang berkualitas dan kompeten memenuhi KKNI level 8. Kami percaya bahwa setiap lulusan dari Pascasarjana ITB STIKOM Bali akan menjadi profesional yang siap berkontribusi dalam berbagai sektor, baik di tingkat nasional maupun internasional. Dengan semangat inovasi dan dedikasi yang tinggi, kami terus berupaya untuk memberikan pendidikan yang relevan dan berkualitas tinggi.",
+sambutan_direktur_p4: "Terima kasih telah mengunjungi laman kami. Kami mengundang Anda untuk mengeksplorasi lebih lanjut tentang program-program kami dan menemukan bagaimana Pascasarjana ITB STIKOM Bali dapat membantu Anda mencapai tujuan karier Anda.<br><strong>Salam ITB STIKOM Bali, Always The First</strong>",
+
+    gelar_lulusan_title: "Gelar Lulusan",
+    gelar_lulusan_text: "Magister Komputer (M.Kom)",
+    visi_prodi_title: "Visi",
+    visi_prodi_text: "Menjadi Program Studi Magister Komputer yang unggul dan berdaya saing global dalam bidang teknologi informasi dan bisnis pada tahun 2035.",
+    misi_prodi_title: "Misi",
+    tujuan_prodi_title: "Tujuan",
+    profil_lulusan_title: "Profil Lulusan",
+
+    // Halaman Beranda (Media & Pengumuman)
+        media1_title: "Yudisium XXVI, Bukti Komitmen Pascasarjana",
+        media2_title: "Sarasehan Program Pascasarjana T.A Ganjil 2023/2024",
+        media3_title: "Diskusi dengan Dinas Pertanian Buleleng",
+        pengumuman1_title: "Pengumuman Wisuda XXXIV",
+        pengumuman2_title: "Pengumuman Yudisium & Wisuda XXXVIII",
+        pengumuman3_title: "KALENDER PASCASARJANA SEMESTER GANJIL 2025-2026",
+        pengumuman4_title: "JADWAL UJIAN PROPOSAL TESIS & SEMINAR HASIL SEMESTER GENAP 2024-2025",
+
+        // =========================================================================
+        // HALAMAN BERITA (REVISI LENGKAP)
+        // =========================================================================
+        berita_title: "Berita & Informasi",
+        berita_subtitle: "Ikuti perkembangan terbaru dari kegiatan, liputan media, dan pengumuman resmi Program Pascasarjana ITB STIKOM Bali.",
+        info_tab_kegiatan: "Kegiatan",
+        kegiatan1_title: "Guest Lecture: Network Intrusion & Honeypots",
+        kegiatan2_title: "Sarasehan Program Pascasarjana Ganjil 2024/2025",
+        kegiatan3_title: "MoA dengan Rajamangala University Thailand",
+        kegiatan4_title: "Pengabdian Masyarakat di Desa Binaan",
+        kegiatan5_title: "Yudisium Angkatan XXVII",
+        kegiatan6_title: "Studi Banding ke Universitas Gadjah Mada",
+        
+        media1_desc: "ITB STIKOM Bali kembali melahirkan ratusan wisudawan yang siap bersaing di era digital, termasuk lulusan dari program Pascasarjana.",
+        media2_desc: "Sebuah pencapaian membanggakan bagi Program Magister Sistem Informasi yang berhasil meningkatkan status akreditasinya.",
+        media3_desc: "Mengundang pakar dari Jerman, seminar ini membahas ancaman siber terkini dan strategi pertahanan menggunakan honeypots.",
+        btn_read_article: "Baca Selengkapnya",
+        btn_load_more: "Muat Lebih Banyak",
+
+        // Halaman Admisi (Revisi Lengkap)
+admisi_title: "Admisi Mahasiswa Baru",
+admisi_subtitle: "Informasi lengkap mengenai prosedur pendaftaran, biaya studi, dan program beasiswa yang tersedia.",
+syarat_title: "Syarat Pendaftaran",
+syarat1_text: "Lulus S1/D4 semua Prodi",
+syarat2_text: "Mengisi Form Pendaftaran",
+syarat3_text: "Membayar Biaya Pendaftaran",
+syarat4_text: "Mengisi Dokumen Registrasi",
+syarat5_text: "Ijazah S1",
+syarat6_text: "KTP",
+alur_title: "Alur Pendaftaran Pascasarjana",
+alur_start: "Calon Mahasiswa",
+alur_path1_title: "Website Pascasarjana",
+alur_path1_desc: "Program Magister Program Studi Sistem Informasi ITB STIKOM Bali",
+alur_path2_title: "Front Office",
+alur_merge: "Pengelola Pasca",
+alur_step1_title: "Ujian Masuk",
+alur_step1_desc: "Test Potensi Akademik, Tes TOEFL, Tes Wawancara",
+alur_step2_title: "Penetapan CaMa Lulus Seleksi",
+alur_step3_title: "SK Mahasiswa & Penetapan NIM",
+biaya_title: "Biaya & Skema Pendaftaran",
+biaya_subtitle: "Kami menyediakan skema pembiayaan yang fleksibel dan berbagai potongan untuk meringankan investasi pendidikan Anda.",
+biaya_pendaftaran_title: "Biaya Pendaftaran",
+biaya_pendaftaran_jenis: "Biaya Pendaftaran Awal",
+potongan_pendaftaran_title: "Potongan Biaya Pendaftaran",
+potongan1_title: "Diskon Gelombang I",
+potongan1_desc: "Dapatkan Potongan Biaya Pendaftaran sebesar Rp 200.000",
+potongan2_title: "Diskon Gelombang II",
+potongan2_desc: "Dapatkan Potongan Biaya Pendaftaran sebesar Rp 100.000",
+potongan3_title: "Potongan Alumni",
+potongan3_desc: "Alumni ITB STIKOM BALI berhak mendapat potongan biaya sebesar Rp 200.000",
+skema_title: "Skema Biaya Kuliah",
+skema_jenis: "Jenis Biaya",
+skema_diawal: "Pembayaran di Muka",
+skema_angsur: "Pembayaran Per Semester",
+skema_spp: "Biaya Kuliah (4 Semester)",
+skema_semester5: "Semester 5 dan selanjutnya <br><small>(Hanya untuk penyusunan Tesis)</small>",
+skema_potongan_title: "Skema dan Potongan Tambahan",
+skema1_title: "Biaya Inklusif",
+skema1_desc: "Biaya sudah termasuk matrikulasi, ujian, dan bimbingan. (Tidak termasuk biaya wisuda)",
+skema2_title: "Potongan Pembayaran di Muka (Alumni)",
+skema2_desc: "Dapatkan potongan biaya sebesar Rp 2.000.000 untuk pembayaran di muka.",
+skema3_title: "Potongan Per Semester (Alumni)",
+skema3_desc: "Dapatkan potongan khusus Rp 500.000 untuk setiap pembayaran per semester.",
+
         // Halaman Kerjasama
         kerjasama_title: "Jaringan Kemitraan Strategis",
         kerjasama_subtitle: "Kami percaya kolaborasi adalah kunci inovasi. Berikut adalah daftar institusi, perusahaan, dan organisasi yang telah bekerjasama dengan kami untuk memajukan pendidikan dan teknologi.",
@@ -130,6 +224,8 @@ const languageContent = {
         pascasarjana_brand_footer: "PASCA<br>SARJANA",
         footer_alamat_title: "Alamat Kampus",
         footer_social_title: "Terhubung Dengan Kami"
+
+        
     },
     en: {
         // Navigation & Page Titles
@@ -146,6 +242,8 @@ const languageContent = {
         nav_sambutan_rektor: "Rector's Welcome",
         nav_sejarah: "History",
         nav_visi_misi: "Vision & Mission",
+        nav_struktur: "Organizational Structure",
+        nav_dosen: "Lecturer Directory",
         nav_sambutan_direktur: "Director's Welcome",
         nav_profil_prodi: "Master's Profile",
         nav_kalender_akademik: "Academic Calendar",
@@ -235,6 +333,95 @@ const languageContent = {
         struktur_subtitle: "Managed by a professional and dedicated team to provide the best academic services.",
         dosen_title: "Lecturer Directory",
         dosen_subtitle: "Supported by expert academics and practitioners in their fields.",
+
+        prodi_title: "Study Program",
+    prodi_subtitle: "Details of the Master's Program in Information Systems at ITB STIKOM Bali.",
+    sambutan_direktur_title: "Welcome from the Director of Postgraduate Program",
+    sambutan_direktur_nama: "Dr. Dandy Pramana Hostiadi, S.Kom., M.T.",
+    sambutan_direktur_jabatan: "Director of Postgraduate Program",
+    sambutan_direktur_p1: "<strong>Greetings from ITB STIKOM Bali, Always The First</strong><br>The Master of Information Systems Program at ITB STIKOM Bali was established to equip students with relevant skills and knowledge to face the challenges of the digital era. We offer a comprehensive curriculum covering four main concentrations: Cyber Security, Data Science, Enterprise System, and Medical Informatics. Each concentration is designed to provide in-depth expertise and critical thinking based on strong analytical power in line with current industry needs, with logical scientific solutions according to sound methodologies.",
+sambutan_direktur_p2: "We are proud of the accreditation we have achieved, which reflects our commitment to providing high-quality education. Our program focuses not only on mastering theory but also on developing skills through a curriculum that is aligned with the scientific vision of the study program, through project-based learning, mastery of research methodologies, and collaboration with national and international industries.",
+sambutan_direktur_p3: "The implementation of the Tri Darma of Higher Education is carried out by applying 5 pillars: credible, transparent, accountable, responsible, and fair. The teaching faculty have scientific specializations in their respective fields with research focuses divided into four areas: Cyber Security, Medical Informatics, Data Science, and Enterprise Systems to support academic activities and produce qualified and competent graduates who meet the KKNI level 8 standards. We believe that every graduate from the ITB STIKOM Bali Postgraduate Program will become a professional ready to contribute to various sectors, both nationally and internationally. With a high spirit of innovation and dedication, we continuously strive to provide relevant and high-quality education.",
+sambutan_direktur_p4: "Thank you for visiting our page. We invite you to explore more about our programs and discover how the ITB STIKOM Bali Postgraduate Program can help you achieve your career goals.<br><strong>Greetings from ITB STIKOM Bali, Always The First</strong>",
+    gelar_lulusan_title: "Graduate Degree",
+    gelar_lulusan_text: "Master of Computer Science (M.Kom)",
+    visi_prodi_title: "Vision",
+    visi_prodi_text: "To become a superior and globally competitive Master of Computer Science Program in the field of information technology and business by 2035.",
+    misi_prodi_title: "Mission",
+    tujuan_prodi_title: "Objectives",
+    profil_lulusan_title: "Graduate Profile",
+
+    // Home Page (Media & Announcements)
+        media1_title: "Yudisium XXVI, Proof of Postgraduate Commitment",
+        media2_title: "Postgraduate Program Seminar for Odd Semester 2023/2024",
+        media3_title: "Discussion with the Buleleng Agriculture Agency",
+        pengumuman1_title: "Graduation Announcement XXXIV",
+        pengumuman2_title: "Yudisium & Graduation Announcement XXXVIII",
+        pengumuman3_title: "POSTGRADUATE CALENDAR ODD SEMESTER 2025-2026",
+        pengumuman4_title: "THESIS PROPOSAL & SEMINAR EXAM SCHEDULE EVEN SEMESTER 2024-2025",
+
+        // =========================================================================
+        // NEWS PAGE (COMPLETE REVISION)
+        // =========================================================================
+        berita_title: "News & Information",
+        berita_subtitle: "Stay updated with the latest developments from activities, media coverage, and official announcements of the ITB STIKOM Bali Postgraduate Program.",
+        info_tab_kegiatan: "Activities",
+        kegiatan1_title: "Guest Lecture: Network Intrusion & Honeypots",
+        kegiatan2_title: "Postgraduate Program Seminar for Odd Semester 2024/2025",
+        kegiatan3_title: "MoA with Rajamangala University Thailand",
+        kegiatan4_title: "Community Service in Mentored Village",
+        kegiatan5_title: "Graduation Ceremony Batch XXVII",
+        kegiatan6_title: "Comparative Study to Gadjah Mada University",
+
+        media1_desc: "ITB STIKOM Bali once again graduates hundreds of alumni ready to compete in the digital era, including those from the Postgraduate program.",
+        media2_desc: "A proud achievement for the Master of Information Systems Program, which has successfully upgraded its accreditation status.",
+        media3_desc: "Inviting an expert from Germany, this seminar discussed the latest cyber threats and defense strategies using honeypots.",
+        btn_read_article: "Read More",
+        btn_load_more: "Load More",
+
+        // Admissions Page (Full Revision)
+admisi_title: "New Student Admissions",
+admisi_subtitle: "Complete information regarding registration procedures, tuition fees, and available scholarship programs.",
+syarat_title: "Registration Requirements",
+syarat1_title: "Bachelor's Degree Graduate",
+syarat2_title: "Fill Registration Form",
+syarat3_title: "Attach Registration Documents",
+syarat4_title: "Follow Selection Test",
+syarat5_title: "Make Payment",
+alur_title: "Postgraduate Registration Flow",
+alur_start: "Prospective Student",
+alur_path1_title: "Postgraduate Website",
+alur_path1_desc: "Master's Program in Information Systems ITB STIKOM Bali",
+alur_path2_title: "Front Office",
+alur_merge: "Postgraduate Admin",
+alur_step1_title: "Entrance Exam",
+alur_step1_desc: "Academic Potential Test, TOEFL Test, Interview Test",
+alur_step2_title: "Selection Result Announcement",
+alur_step3_title: "Student Decree & NIM Assignment",
+biaya_title: "Fees & Registration Schemes",
+biaya_subtitle: "We provide flexible financing schemes and various discounts to ease your educational investment.",
+biaya_pendaftaran_title: "Registration Fee",
+biaya_pendaftaran_jenis: "Initial Registration Fee",
+potongan_pendaftaran_title: "Registration Fee Discounts",
+potongan1_title: "First Wave Discount",
+potongan1_desc: "Get a Registration Fee discount of IDR 200,000",
+potongan2_title: "Second Wave Discount",
+potongan2_desc: "Get a Registration Fee discount of IDR 100,000",
+potongan3_title: "Alumni Discount",
+potongan3_desc: "ITB STIKOM BALI Alumni are entitled to a fee discount of IDR 200,000",
+skema_title: "Tuition Fee Scheme",
+skema_jenis: "Fee Type",
+skema_diawal: "Upfront Payment",
+skema_angsur: "Per Semester Payment",
+skema_spp: "Tuition Fee (4 Semesters)",
+skema_semester5: "5th Semester and beyond <br><small>(For Thesis writing only)</small>",
+skema_potongan_title: "Additional Schemes and Discounts",
+skema1_title: "Inclusive Fee",
+skema1_desc: "The fee includes matriculation, exams, and supervision. (Excludes graduation ceremony fee)",
+skema2_title: "Upfront Payment Discount (Alumni)",
+skema2_desc: "Get a discount of IDR 2,000,000 for upfront payment.",
+skema3_title: "Per Semester Discount (Alumni)",
+skema3_desc: "Get a special discount of IDR 500,000 for each per-semester payment.",
         
         // Partnership Page
         kerjasama_title: "Strategic Partnership Network",
@@ -574,25 +761,6 @@ function setupTestimonialSlider() {
     });
 }
 
-function setupSambutanReadMore() {
-    const readMoreBtn = document.getElementById('read-more-btn');
-    const fullText = document.querySelector('.sambutan-full-text');
-    if (!readMoreBtn || !fullText) return;
-    const updateButtonText = () => {
-        const lang = localStorage.getItem('language') || 'id';
-        const isOpen = fullText.classList.contains('open');
-        const text = isOpen ? languageContent[lang]['btn_read_less'] : languageContent[lang]['btn_read_more'];
-        const icon = isOpen ? "<i class='bx bx-chevron-up'></i>" : "<i class='bx bx-chevron-down'></i>";
-        readMoreBtn.innerHTML = `${text} ${icon}`;
-    };
-    readMoreBtn.addEventListener('click', () => {
-        fullText.classList.toggle('open');
-        readMoreBtn.classList.toggle('open');
-        updateButtonText();
-    });
-    document.addEventListener('languageChange', updateButtonText);
-    updateButtonText();
-}
 
 function setupPartnerFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -866,10 +1034,196 @@ function populateLecturerDirectory() {
     });
 }
 
+// Tambahkan di dalam event listener DOMContentLoaded di paling bawah file script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // ... (kode Anda yang sudah ada seperti AOS.init(), setupNavbarScroll(), dll.)
+
+    // TAMBAHKAN FUNGSI BARU INI
+    function setupInteractiveStruktur() {
+        const persons = document.querySelectorAll('.person-container');
+        if (!persons.length) return;
+
+        persons.forEach(person => {
+            person.addEventListener('click', () => {
+                // Cek apakah yang diklik sudah aktif
+                const isAlreadyActive = person.classList.contains('active');
+
+                // Hapus class 'active' dari semua elemen dulu
+                persons.forEach(p => p.classList.remove('active'));
+
+                // Jika yang diklik tadi belum aktif, tambahkan class 'active'
+                if (!isAlreadyActive) {
+                    person.classList.add('active');
+                }
+            });
+        });
+    }
+
+    // PANGGIL FUNGSI BARU INI
+    setupInteractiveStruktur();
+});
+
+
+// GANTI FUNGSI setupSambutanReadMore() YANG LAMA DENGAN INI:
+function setupAllReadMores() {
+    // Cari semua tombol dengan kelas .read-more-btn
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    if (!readMoreButtons.length) return;
+
+    readMoreButtons.forEach(button => {
+        // Cari elemen .sambutan-full-text yang merupakan "saudara" dari tombol ini
+        const parent = button.parentElement;
+        const fullText = parent.querySelector('.sambutan-full-text');
+
+        if (!fullText) return;
+
+        const updateButtonText = () => {
+            const lang = localStorage.getItem('language') || 'id';
+            const isOpen = fullText.classList.contains('open');
+            const text = isOpen ? languageContent[lang]['btn_read_less'] : languageContent[lang]['btn_read_more'];
+            const icon = isOpen ? "<i class='bx bx-chevron-up'></i>" : "<i class='bx bx-chevron-down'></i>";
+            button.innerHTML = `${text} ${icon}`;
+        };
+
+        button.addEventListener('click', () => {
+            fullText.classList.toggle('open');
+            button.classList.toggle('open');
+            updateButtonText();
+        });
+
+        // Pastikan teks tombol di-update saat bahasa berubah
+        document.addEventListener('languageChange', updateButtonText);
+        // Set teks awal saat halaman dimuat
+        updateButtonText();
+    });
+}
+
+// GANTI FUNGSI setupMovingTab() YANG LAMA DENGAN INI
+function setupMovingTab() {
+    const tabContainer = document.querySelector('.prodi-vertical-tabs');
+    if (!tabContainer) return;
+
+    const tabs = tabContainer.querySelectorAll('.prodi-tab-button');
+    const indicator = tabContainer.querySelector('.active-tab-indicator');
+    const isMobile = () => window.innerWidth <= 992;
+
+    function moveIndicator(target) {
+        if (!indicator || !target) return;
+        
+        if (isMobile()) {
+            // Logika untuk Tampilan Horizontal (Mobile)
+            const containerRect = tabContainer.getBoundingClientRect();
+            const targetRect = target.getBoundingClientRect();
+            const scrollLeft = tabContainer.scrollLeft;
+            indicator.style.width = `${targetRect.width}px`;
+            indicator.style.transform = `translateX(${targetRect.left - containerRect.left + scrollLeft}px)`;
+        } else {
+            // Logika untuk Tampilan Vertikal (Desktop)
+            indicator.style.width = `calc(100% - 30px)`; // Reset lebar jika dari mobile
+            indicator.style.transform = `translateY(${target.offsetTop - tabContainer.firstElementChild.offsetTop}px)`;
+        }
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            if (tab.classList.contains('active')) return;
+
+            tabs.forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.prodi-panel').forEach(p => p.classList.remove('active'));
+
+            tab.classList.add('active');
+            const targetPanel = document.getElementById(`${tab.dataset.tab}-panel`);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+            moveIndicator(tab);
+        });
+    });
+
+    function initializeIndicator() {
+        const activeTab = tabContainer.querySelector('.prodi-tab-button.active');
+        moveIndicator(activeTab);
+    }
+    
+    // Inisialisasi setelah sedikit delay agar layout stabil
+    setTimeout(initializeIndicator, 200);
+
+    // Atur ulang posisi saat ukuran window berubah
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(initializeIndicator, 250);
+    });
+}
 
 // =========================================================================
-// BAGIAN 4: EVENT LISTENER UTAMA (SATU UNTUK SEMUA)
+// FUNGSI UNTUK PROFIL PRODI AKORDEON (DESAIN BARU)
 // =========================================================================
+function setupProdiAccordion() {
+    const accordionItems = document.querySelectorAll('.prodi-accordion .accordion-item');
+    if (!accordionItems.length) return;
+
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        header.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Tutup semua item lain
+            accordionItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+            });
+
+            // Jika item yang diklik tidak aktif sebelumnya, buka item tersebut
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+}
+
+// =========================================================================
+// FUNGSI UNTUK TOMBOL "MUAT LEBIH BANYAK"
+// =========================================================================
+function setupLoadMore(panelId, itemSelector, initialCount, loadCount) {
+    const panel = document.querySelector(panelId);
+    if (!panel) return;
+
+    const items = panel.querySelectorAll(itemSelector);
+    const loadMoreBtn = panel.querySelector('.load-more-btn');
+    let currentlyShown = initialCount;
+
+    if (items.length <= initialCount) {
+        if (loadMoreBtn) loadMoreBtn.style.display = 'none';
+        return;
+    }
+    
+    // Sembunyikan item yang berlebih di awal
+    items.forEach((item, index) => {
+        if (index >= initialCount) {
+            item.style.display = 'none';
+        }
+    });
+
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            const nextShown = currentlyShown + loadCount;
+            
+            for (let i = currentlyShown; i < nextShown && i < items.length; i++) {
+                items[i].style.display = 'block'; // atau 'flex' tergantung itemnya
+                // Menambahkan AOS-init secara manual agar animasi fade-up tetap berjalan
+                items[i].classList.add('aos-init', 'aos-animate'); 
+            }
+            
+            currentlyShown = nextShown;
+
+            if (currentlyShown >= items.length) {
+                loadMoreBtn.style.display = 'none';
+            }
+        });
+    }
+}
+
+// Terakhir, pastikan fungsi baru ini dipanggil di bagian paling bawah file
 document.addEventListener('DOMContentLoaded', function() {
     AOS.init({ duration: 800, once: true });
 
@@ -887,10 +1241,14 @@ document.addEventListener('DOMContentLoaded', function() {
     setupTabs('.tab-button', '.konten-panel', 'active');
     setupTabs('.info-tab-button', '.info-panel', 'active');
     setupTestimonialSlider();
-    setupSambutanReadMore();
+    setupAllReadMores(); // Panggil fungsi baru di sini, ganti yang lama
     setupPartnerFilter();
     setupInteractiveTimeline();
     setupVisiMisiTabs();
     setupVisiMisiReveal();
     populateLecturerDirectory();
+    setupProdiAccordion(); // Panggil fungsi baru di sini
+    setupLoadMore('#kegiatan-panel', '.kegiatan-card', 6, 3); // Tampilkan 6, muat 3 per klik
+    setupLoadMore('#media-panel', '.media-card', 3, 3);       // Tampilkan 3, muat 3 per klik
+    setupLoadMore('#pengumuman-panel', '.pengumuman-item', 4, 4); // Tampilkan 4, muat 4 per klik
 });
