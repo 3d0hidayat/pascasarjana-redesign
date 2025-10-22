@@ -8,13 +8,17 @@
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
+/* TAMBAHKAN BLOK KODE DI BAWAH INI */
+.page-wrapper {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: #f4f4f4;
     color: #333;
-}
-
-main {
-    overflow-x: hidden;
 }
 
 a {
@@ -108,7 +112,7 @@ nav {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 25px; 
+    gap: 20px; /* Diubah dari 25px */
     margin: 0;
     padding: 0;
     position: relative;
@@ -121,6 +125,7 @@ nav ul li a {
     border-radius: 5px;
     transition: all 0.3s;
     position: relative;
+    font-size: 0.95rem; /* Tambahkan baris ini */
 }
 
 nav ul li a:hover {
@@ -297,6 +302,15 @@ nav ul li.dropdown {
         linear-gradient(rgba(5, 11, 36, 0.85), rgba(15, 31, 106, 0.85)),
         url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070');
 }
+
+/* === INI KODE YANG SAYA TAMBAHKAN === */
+.prodi-page .page-header {
+    background-image: 
+        linear-gradient(rgba(5, 11, 36, 0.85), rgba(15, 31, 106, 0.85)),
+        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071');
+}
+/* === AKHIR DARI KODE TAMBAHAN === */
+
 #hero {
     height: 100vh;
     position: relative;
@@ -637,12 +651,16 @@ p.footer-brand-text {
 .sambutan-teks {
     text-align: left;
 }
-#sambutan-content p {
+/***********************************/
+/* INILAH PERBAIKAN UNTUK FONT */
+#sambutan-content p, #sambutan-content-direktur p {
     font-size: 1.05rem;
     line-height: 1.8;
     color: #444;
     margin-bottom: 15px;
 }
+/***********************************/
+
 .sambutan-full-text {
     max-height: 0;
     overflow: hidden;
@@ -651,7 +669,8 @@ p.footer-brand-text {
 .sambutan-full-text.open {
     max-height: 1000px;
 }
-#read-more-btn {
+/* Mengganti ID #read-more-btn dengan kelas .read-more-btn */
+.read-more-btn {
     background-color: transparent;
     border: 2px solid #0F1F6A;
     color: #0F1F6A;
@@ -665,15 +684,15 @@ p.footer-brand-text {
     align-items: center;
     gap: 8px;
 }
-#read-more-btn i {
+.read-more-btn i {
     font-size: 20px;
     transition: transform 0.3s ease;
 }
-#read-more-btn:hover {
+.read-more-btn:hover {
     background-color: #0F1F6A;
     color: #ffffff;
 }
-#read-more-btn.open i {
+.read-more-btn.open i {
     transform: rotate(180deg);
 }
 
@@ -943,17 +962,15 @@ p.footer-brand-text {
     color: #FFD700;
     font-weight: 600;
 }
+/* ========== FINAL CSS UNTUK STRUKTUR ORGANISASI DENGAN GARIS TERSAMBUNG (REVISI 3) ========== */
 
-/* ========== STYLING UNTUK STRUKTUR ORGANISASI (GLASSMORPHISM) BARU ========== */
 #struktur {
-    /* Background gradien biru yang dinamis */
     background: linear-gradient(160deg, #0b1851 0%, #0056b3 100%);
     padding: 80px 20px;
     position: relative;
     overflow: hidden;
 }
 
-/* Ganti warna judul dan subjudul agar kontras */
 #struktur .section-title,
 #struktur .section-subtitle {
     color: #ffffff;
@@ -961,108 +978,110 @@ p.footer-brand-text {
 }
 
 .struktur-grid {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 .struktur-level {
     display: flex;
     justify-content: center;
-    width: 100%;
     position: relative;
-    padding: 20px 0;
-    margin-bottom: 20px;
+    padding: 40px 0; /* Jarak vertikal yang konsisten */
+    gap: 150px;
 }
 
-/* Garis-garis penghubung yang lebih halus */
-.struktur-level:not(:last-child)::after,
-.level-split::before,
-.level-split .struktur-card::before {
+.person-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- LOGIKA BARU YANG LEBIH SIMPEL DAN AKURAT --- */
+
+/* 1. Gambar garis KE BAWAH dari setiap foto */
+.person-container::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%; /* Mulai dari bawah foto */
+    transform: translateX(-50%);
+    width: 2px;
+    height: 80px; /* Jarak total (40px bawah + 40px atas) */
     background-color: rgba(255, 255, 255, 0.25);
 }
 
-.struktur-level:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 40px;
+/* 2. Sembunyikan garis ke bawah untuk level PALING AKHIR */
+.struktur-level:last-child .person-container::after {
+    display: none;
 }
 
-.level-split {
-    gap: 100px;
-}
-
+/* 3. Untuk level yang terbagi, gambar garis horizontal */
 .level-split::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 25%;
-    width: 50%;
-    height: 2px;
-}
-
-/* Kartu Profil dengan Efek "Kaca" */
-.struktur-card {
-    /* Efek Glassmorphism */
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* Dukungan untuk Safari */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    
-    border-radius: 16px; /* Sudut lebih melengkung */
-    padding: 25px;
-    width: 280px;
-    text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Bayangan untuk kedalaman */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    position: relative;
-    z-index: 2;
-}
-
-.struktur-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.5); /* Border menyala saat di-hover */
-}
-
-.level-split .struktur-card::before {
-    content: '';
-    position: absolute;
-    top: -22px;
     left: 50%;
     transform: translateX(-50%);
+    height: 2px;
+    width: calc(100% - 150px);
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* 4. Untuk foto di level terbagi, gambar garis pendek KE ATAS */
+.level-split .person-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
     width: 2px;
-    height: 22px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
-.struktur-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 15px auto;
-    border: 4px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+/* 5. Untuk jabatan yang mengarah ke level terbagi (Direktur), pendekkan garisnya */
+.struktur-level:has(+ .level-split) .person-container::after {
+    height: 40px; /* Pendekkan agar pas menyentuh garis horizontal */
 }
 
-.struktur-nama {
-    font-size: 1.1rem;
-    color: #ffffff; /* Teks putih solid */
-    margin-bottom: 5px;
-    font-weight: 600;
+/* 6. Sembunyikan garis ke bawah dari level terbagi karena sudah ada alur di bawahnya */
+.level-split .person-container::after {
+    display: none;
 }
+/* --- Akhir Logika Garis --- */
 
-.struktur-jabatan {
-    font-size: 0.9rem;
-    color: #c0c8e7; /* Teks putih kebiruan yang lembut */
-    line-height: 1.4;
+
+/* Sisa kode CSS tidak perlu diubah */
+.person-img {
+    width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+    border: 4px solid #ffffff; box-shadow: 0 5px 20px rgba(0, 82, 212, 0.15);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.person-details {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(15, 31, 106, 0.85) 0%, transparent 70%);
+    color: white; display: flex; flex-direction: column; justify-content: flex-end;
+    align-items: center; padding: 20px 10px; text-align: center; border-radius: 50%;
+    opacity: 0; visibility: hidden; transform: scale(0.9);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.person-name { font-size: 1rem; font-weight: 600; }
+.person-title { font-size: 0.8rem; line-height: 1.3; }
+.person-container.active { width: 220px; height: 220px; }
+.person-container.active .person-img,
+.person-container.active .person-details { border-radius: 16px; }
+.person-container.active .person-details { opacity: 1; visibility: visible; transform: scale(1); }
+@media (max-width: 768px) {
+    .struktur-level { padding: 15px 0; }
+    .person-container::after,
+    .level-split::before,
+    .level-split .person-container::before {
+        display: none !important;
+    }
 }
 
 /* ========== STYLING UNTUK DIREKTORI DOSEN (DYNAMIC REVEAL) BARU ========== */
@@ -1446,7 +1465,7 @@ a.dosen-card:hover .dosen-name {
     #sambutan .section-title {
         text-align: center !important;
     }
-    #sambutan-content p {
+    #sambutan-content p, #sambutan-content-direktur p {
         text-align: left;
     }
 }
@@ -1639,3 +1658,445 @@ a.dosen-card:hover .dosen-name {
     margin-bottom: 40px;
 }
 } 
+
+/* =========================================================================
+   STYLING UNTUK HALAMAN PRODI (REVISI FINAL)
+   ========================================================================= */
+
+/* Pembungkus utama untuk menyatukan dua bagian */
+.prodi-unified-wrapper {
+    background-color: #f8faff; /* Latar belakang abu-abu muda yang menyatu */
+    position: relative; /* Wajib untuk posisi absolut elemen dekorasi */
+    overflow: hidden; /* Sembunyikan bagian lingkaran yang keluar area */
+    padding: 1px 0; /* Mencegah margin aneh dari elemen di dalamnya */
+}
+
+/* Mengatur agar section di dalamnya transparan */
+#sambutan-direktur {
+    background-color: transparent; /* Pastikan section transparan */
+    padding-top: 60px;
+    padding-bottom: 30px; /* Kurangi jarak bawah agar lebih dekat ke profil */
+}
+#profil-prodi {
+    background-color: transparent;
+    padding-top: 30px;
+    padding-bottom: 100px; /* Tambah jarak bawah agar tidak mepet footer */
+}
+
+
+/* Tata letak grid untuk sambutan */
+.sambutan-grid.sambutan-grid-reverse {
+    grid-template-columns: 1fr 350px;
+}
+
+/* DEKORASI LINGKARAN ACAK (HANYA DI PINGGIR) */
+.circle-decoration {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #c4d4fc; /* Warna lembut */
+    z-index: 1; /* Di belakang konten */
+}
+
+/* Ukuran */
+.circle-decoration.size-large { width: 450px; height: 450px; filter: blur(80px); opacity: 0.6; }
+.circle-decoration.size-medium { width: 280px; height: 280px; filter: blur(60px); opacity: 0.7; }
+.circle-decoration.size-small { width: 180px; height: 180px; filter: blur(40px); opacity: 0.5; }
+
+/* Posisi Acak (Hanya di Pinggir) */
+.circle-decoration.pos-1 { top: -150px; left: -200px; } /* Kiri Atas */
+.circle-decoration.pos-2 { top: 100px; right: -150px; } /* Kanan Atas */
+.circle-decoration.pos-3 { top: 50%; left: -220px; }   /* Kiri Tengah */
+.circle-decoration.pos-4 { top: 65%; right: -250px; } /* Kanan Tengah */
+.circle-decoration.pos-5 { bottom: -100px; left: -90px; }  /* Kiri Bawah */
+
+
+/* KONTEN PRODI (INFO CARD & AKORDEON) */
+.prodi-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative; /* Konten harus relatif */
+    z-index: 2; /* Pastikan di atas dekorasi lingkaran */
+}
+
+.prodi-key-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.info-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 82, 212, 0.05);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 82, 212, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.info-card i { font-size: 2.5rem; color: #0F1F6A; background-color: #f0f4ff; padding: 15px; border-radius: 50%; }
+.info-card strong { display: block; font-size: 0.9rem; color: #555; margin-bottom: 4px; }
+.info-card span { font-size: 1rem; font-weight: 600; color: #0F1F6A; }
+
+
+/* Akordeon */
+.prodi-accordion { max-width: 900px; margin: 0 auto; }
+.accordion-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px; margin-bottom: 15px; overflow: hidden; transition: all 0.3s ease;
+}
+.accordion-item.active { box-shadow: 0 8px 25px rgba(0, 82, 212, 0.08); border-color: #cddcff; }
+.accordion-header {
+    width: 100%; padding: 20px 25px; display: flex; justify-content: space-between;
+    align-items: center; background-color: transparent; border: none; cursor: pointer;
+    text-align: left; font-size: 1.2rem; font-weight: 600; color: #0F1F6A;
+}
+.accordion-header i { font-size: 1.5rem; transition: transform 0.3s ease; }
+.accordion-item.active .accordion-header i { transform: rotate(180deg); }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out, padding 0.5s ease-out; }
+.accordion-item.active .accordion-content { max-height: 2000px; padding: 0 25px 25px 25px; }
+.accordion-content p, .accordion-content ul { font-size: 1rem; line-height: 1.8; color: #444; margin: 0 0 15px 0; }
+.accordion-content ul { list-style: none; padding: 0; }
+.accordion-content ul li { padding-left: 25px; position: relative; margin-bottom: 12px; }
+.accordion-content ul li::before { content: '\e99a'; font-family: 'Boxicons'; position: absolute; left: 0; top: 2px; color: #007BFF; font-size: 1.2rem; }
+.accordion-content h4 { font-size: 1.1rem; color: #0F1F6A; margin-bottom: 15px; margin-top: 25px; border-left: 3px solid #007BFF; padding-left: 10px; }
+
+
+/* Tampilan Mobile */
+@media (max-width: 992px) {
+    .sambutan-grid,
+    .sambutan-grid.sambutan-grid-reverse { grid-template-columns: 1fr; }
+
+    .sambutan-grid.sambutan-grid-reverse .sambutan-foto { order: 1; }
+    .sambutan-grid.sambutan-grid-reverse .sambutan-teks { order: 2; }
+    #sambutan-direktur .section-title { text-align: center !important; }
+
+    #sambutan-direktur { padding-top: 40px; padding-bottom: 20px; }
+    #profil-prodi { padding-top: 20px; padding-bottom: 60px; }
+}
+
+@media (max-width: 768px) {
+    .circle-decoration.size-large { width: 300px; height: 300px; }
+    .circle-decoration.size-medium { width: 200px; height: 200px; }
+    .circle-decoration.size-small { width: 120px; height: 120px; }
+
+    .circle-decoration.pos-1 { top: -80px; left: -100px; }
+    .circle-decoration.pos-2 { top: 150px; right: -60px; }
+    .circle-decoration.pos-4 { top: 60%; right: -120px; }
+}
+
+/* =========================================================================
+   REVISI FINAL UNTUK HALAMAN BERITA
+   ========================================================================= */
+
+/* Latar belakang header untuk halaman berita */
+.berita-page .page-header {
+    background-image: 
+        linear-gradient(rgba(5, 11, 36, 0.85), rgba(15, 31, 106, 0.85)),
+        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070');
+}
+
+/* Section utama di halaman berita */
+#info-lengkap {
+    background-color: #ffffff;
+}
+#info-lengkap .section-container {
+    padding-top: 60px;
+}
+#info-lengkap .info-tabs {
+    margin-bottom: 50px;
+}
+
+/* 1. Layout Galeri Modern untuk Panel Kegiatan */
+.kegiatan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: 280px; 
+    gap: 20px;
+}
+.kegiatan-card {
+    display: block; position: relative; border-radius: 12px;
+    overflow: hidden; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; color: white; height: auto; /* Biarkan tinggi menyesuaikan */
+}
+.kegiatan-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 82, 212, 0.2);
+}
+.kegiatan-card img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.4s ease-in-out;
+}
+.kegiatan-card:hover img { transform: scale(1.1); }
+.kegiatan-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(15, 31, 106, 0.95) 0%, transparent 60%);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 25px; text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+.kegiatan-date {
+    font-size: 0.8rem; font-weight: 600;
+    background-color: rgba(255, 215, 0, 0.9); color: #0F1F6A;
+    padding: 4px 10px; border-radius: 50px; margin-bottom: 10px;
+    display: inline-block; text-shadow: none;
+}
+.kegiatan-title { font-size: 1.3rem; font-weight: 600; line-height: 1.4; }
+
+/* Aturan untuk kartu asimetris */
+@media (min-width: 993px) {
+    .kegiatan-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .kegiatan-card.kegiatan-card-wide {
+        grid-column: span 2;
+    }
+    .kegiatan-card.kegiatan-card-tall {
+        grid-row: span 2;
+    }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+    .kegiatan-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 2. Perbaikan Kartu Media (dengan deskripsi & tombol) */
+.media-card { /* Ganti dari a.media-card ke .media-card karena tagnya diubah menjadi div */
+    background-color: #f8f9fa; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease; display: flex; flex-direction: column;
+}
+.media-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+.media-card-content p {
+    font-size: 0.9rem; color: #555; line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Membuat deskripsi mengisi ruang tersedia */
+}
+.media-read-more {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-weight: 600; color: #007BFF;
+    transition: all 0.3s ease; text-decoration: none;
+}
+.media-card:hover .media-read-more {
+    color: #0F1F6A; gap: 10px;
+}
+
+/* 3. Tombol "Muat Lebih Banyak" */
+.load-more-btn {
+    display: block;
+    margin: 40px auto 0 auto;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0F1F6A;
+    background-color: transparent;
+    border: 2px solid #0F1F6A;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.load-more-btn:hover {
+    background-color: #0F1F6A;
+    color: white;
+}
+
+/* =========================================================================
+   REDESAIN HALAMAN ADMISI
+   ========================================================================= */
+
+.admisi-page .page-header {
+    background-image: 
+        linear-gradient(rgba(5, 11, 36, 0.85), rgba(15, 31, 106, 0.85)),
+        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070');
+}
+.admisi-section { padding: 80px 20px; }
+.admisi-section.alt-bg { background-color: #f8faff; }
+
+/* 1. Desain Baru: Syarat Pendaftaran */
+#syarat.admisi-section {
+    background-color: #f8faff; /* Latar belakang lembut */
+}
+
+.syarat-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
+}
+
+.req-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.req-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 82, 212, 0.12);
+    border-color: #cddcff;
+}
+
+.req-card-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #e7f0ff;
+    transition: all 0.3s ease;
+}
+
+.req-card:hover .req-card-icon {
+    background-color: #007BFF;
+    transform: rotate(15deg);
+}
+
+.req-card-icon i {
+    font-size: 2.2rem;
+    color: #0F1F6A;
+    transition: all 0.3s ease;
+}
+
+.req-card:hover .req-card-icon i {
+    color: #ffffff;
+    transform: rotate(-15deg);
+}
+
+.req-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* 2. Desain Baru: Alur Pendaftaran Flowchart */
+.alur-pendaftaran-flowchart {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 30px; margin-top: 50px;
+}
+.flow-row {
+    display: flex; flex-direction: column; align-items: center;
+    position: relative; width: 100%;
+}
+.flow-row:not(:last-child)::after {
+    content: '↓'; font-size: 2.5rem; color: #0F1F6A; font-weight: bold;
+    margin-top: -15px; margin-bottom: -15px;
+}
+.flow-node {
+    background-color: #fff; border-radius: 12px; padding: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: center;
+    border: 1px solid #e0eaff; width: 100%; max-width: 450px;
+}
+.flow-node i { font-size: 3rem; color: #007BFF; margin-bottom: 15px; }
+.flow-node h3 { font-size: 1.4rem; color: #0F1F6A; margin-bottom: 10px; }
+.flow-node p { color: #555; line-height: 1.6; font-size: 0.9rem; }
+.initial-split { gap: 20px; }
+.initial-split::after { content: none; }
+.flow-branch {
+    display: flex; justify-content: center; gap: 40px;
+    width: 100%; max-width: 900px; margin-top: 40px; position: relative;
+}
+.start-node { position: relative; margin-bottom: 40px; }
+.start-node::after {
+    content: ''; position: absolute; left: 50%; top: 100%;
+    transform: translateX(-50%); width: 2px; height: 40px;
+    background-color: #0F1F6A;
+}
+.flow-branch::before {
+    content: ''; position: absolute; top: -40px; left: 50%;
+    transform: translateX(-50%); height: 2px; width: calc(100% - 300px);
+    background-color: #0F1F6A;
+}
+.path-node { max-width: 300px; }
+.path-node::before {
+    content: ''; position: absolute; left: 50%; bottom: 100%;
+    transform: translateX(-50%); width: 2px; height: 40px;
+    background-color: #0F1F6A;
+}
+.merge-node { position: relative; }
+.merge-node::before {
+    content: '↓'; font-size: 2.5rem; color: #0F1F6A; font-weight: bold;
+    position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+    margin-bottom: -15px;
+}
+
+/* 3. Desain Baru: Biaya & Potongan */
+.biaya-wrapper { display: flex; flex-direction: column; gap: 70px; margin-top: 50px; }
+.biaya-blok .sub-section-title {
+    font-size: 1.8rem; color: #0F1F6A; margin-bottom: 30px; text-align: center;
+    position: relative; padding-bottom: 15px;
+}
+.biaya-blok .sub-section-title::after {
+    content: ''; position: absolute; bottom: 0; left: 50%;
+    transform: translateX(-50%); width: 60px; height: 4px;
+    background-color: #007BFF; border-radius: 2px;
+}
+.potongan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.potongan-card {
+    background-color: #f8faff; border-radius: 12px; padding: 30px;
+    text-align: center; border: 1px solid #e9ecef;
+}
+.potongan-card i { font-size: 3rem; color: #007BFF; margin-bottom: 15px; }
+.potongan-card h4 { font-size: 1.3rem; color: #0F1F6A; margin-bottom: 10px; }
+.potongan-card p { color: #555; line-height: 1.6; }
+.skema-table {
+    background-color: #fff; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07); font-size: 1rem;
+    border: 1px solid #e9ecef;
+}
+.table-row { display: grid; grid-template-columns: 2fr 1fr 1fr; text-align: left; }
+.skema-table.simple .table-row { grid-template-columns: 1fr 1fr; }
+.table-row div { padding: 18px 25px; border-bottom: 1px solid #e9ecef; display: flex; align-items: center; }
+.table-row:last-child div { border-bottom: none; }
+.table-row div:first-child { font-weight: 600; color: #0F1F6A; }
+.table-row small { font-size: 0.8rem; color: #777; margin-top: 4px; display: block; line-height: 1.4; }
+
+/* Responsif */
+@media (max-width: 992px) {
+    .syarat-redesigned-grid { grid-template-columns: 1fr; }
+    .syarat-list-content .section-title { text-align: center; }
+}
+@media (max-width: 768px) {
+    .flow-branch { flex-direction: column; gap: 70px; align-items: center; }
+    .flow-branch::before, .start-node::after, .path-node::before { display: none; }
+    .flow-node { max-width: 90%; }
+    .path-node { position: relative; }
+    .path-node::after {
+        content: '↓'; font-size: 2.5rem; color: #0F1F6A; font-weight: bold;
+        position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+        margin-top: -15px;
+    }
+    .merge-node::before { margin-top: 25px; }
+    .table-row, .skema-table.simple .table-row { grid-template-columns: 1fr; }
+    .table-row div { justify-content: space-between; border-left: 3px solid #007BFF; border-bottom: none; padding: 12px 15px; }
+    .table-row div:first-child { border-left: none; background-color: #f8faff; font-size: 1.1rem; }
+    .table-row div::before { content: attr(data-label); font-weight: 500; color: #555; }
+}
