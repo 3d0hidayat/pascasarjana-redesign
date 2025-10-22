@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita - Pascasarjana ITB STIKOM Bali</title>
+    <link rel="icon" type="image/png" href="./img/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="berita-page">
+<div class="page-wrapper">
+
+<header>
+   <nav>
+        <div class="logo">
+            <a href="index.html" class="logo-link-header">
+                <img src="img/LogoITB.png" alt="Logo ITB STIKOM Bali">
+                <div class="logo-separator"></div>
+                <span class="header-brand-text">PASCA<br>SARJANA</span>
+            </a>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <span class="magic-line"></span>
+                <li class="nav-beranda"><a href="index.html" data-lang="nav_beranda">Beranda</a></li>
+                <li class="dropdown nav-tentang"><a href="tentang.html" data-lang="nav_tentang">Tentang Kami <i class='bx bx-chevron-down dropdown-icon'></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="tentang.html#sambutan" data-lang="nav_sambutan_rektor">Sambutan Rektor</a></li>
+                        <li><a href="tentang.html#sejarah" data-lang="nav_sejarah">Sejarah</a></li>
+                        <li><a href="tentang.html#visi-misi" data-lang="nav_visi_misi">Visi & Misi</a></li>
+                        <li><a href="tentang.html#struktur" data-lang="nav_struktur">Struktur Organisasi</a></li>
+                        <li><a href="tentang.html#dosen" data-lang="nav_dosen">Direktori Dosen</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown nav-prodi"><a href="prodi.html" data-lang="nav_prodi">Program Studi <i class='bx bx-chevron-down dropdown-icon'></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="prodi.html#sambutan-direktur" data-lang="nav_sambutan_direktur">Sambutan Direktur</a></li>
+                        <li><a href="prodi.html#profil-prodi" data-lang="nav_profil_prodi">Profil Prodi S2</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown nav-akademik"><a href="Akademik.html" data-lang="nav_akademik">Akademik <i class='bx bx-chevron-down dropdown-icon'></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" data-lang="nav_kalender_akademik">Kalender Akademik</a></li>
+                        <li><a href="#" data-lang="nav_kurikulum">Kurikulum</a></li>
+                    </ul>
+                </li>
+                <li class="nav-admisi"><a href="admisi.html" data-lang="nav_admisi">Admisi</a></li>
+                <li class="dropdown nav-berita"><a href="Berita.html" data-lang="nav_berita">Berita <i class='bx bx-chevron-down dropdown-icon'></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#info-lengkap" data-lang="nav_kegiatan">Kegiatan</a></li>
+                        <li><a href="#info-lengkap" data-lang="nav_media">Media</a></li>
+                        <li><a href="#info-lengkap" data-lang="nav_pengumuman">Pengumuman</a></li>
+                    </ul>
+                </li>
+                <li class="nav-kerjasama"><a href="Kerjasama.html" data-lang="nav_kerjasama">Kerjasama</a></li>
+                <li class="li-language-switcher">
+                    <div class="language-switcher">
+                        <button id="lang-id-mobile" class="lang-btn lang-btn-id active"><img src="img/flag-id.svg" alt="Bahasa Indonesia"></button>
+                        <button id="lang-en-mobile" class="lang-btn lang-btn-en"><img src="img/flag-en.svg" alt="English Language"></button>
+                    </div>
+                </li>
+            </ul>
+            <div class="language-switcher-desktop">
+                <button id="lang-id-desktop" class="lang-btn lang-btn-id active"><img src="img/flag-id.svg" alt="Bahasa Indonesia"></button>
+                <button id="lang-en-desktop" class="lang-btn lang-btn-en"><img src="img/flag-en.svg" alt="English Language"></button>
+            </div>
+            <div class="hamburger-menu"><i class='bx bx-menu'></i></div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="page-header">
+        <div class="section-container">
+            <h1 data-aos="fade-up" data-lang="berita_title">Berita & Informasi</h1>
+            <p data-aos="fade-up" data-aos-delay="100" data-lang="berita_subtitle">Ikuti perkembangan terbaru dari kegiatan, liputan media, dan pengumuman resmi Program Pascasarjana ITB STIKOM Bali.</p>
+        </div>
+    </section>
+
+    <section id="info-lengkap">
+        <div class="section-container">
+            <div class="info-tabs" data-aos="fade-up">
+                <button class="info-tab-button active" data-tab="kegiatan" data-lang="info_tab_kegiatan">Kegiatan</button>
+                <button class="info-tab-button" data-tab="media" data-lang="info_tab_media">Media</button>
+                <button class="info-tab-button" data-tab="pengumuman" data-lang="info_tab_pengumuman">Pengumuman</button>
+            </div>
+    
+            <div class="info-content-panels">
+    
+                <div id="kegiatan-panel" class="info-panel active">
+                    <div class="kegiatan-grid">
+                        <a href="https://www.stikom-bali.ac.id/id/program-magister-komputer-prodi-s2-sistem-informasi-itb-stikom-bali-gelar-seminar-guest-lecture-series-at-the-post-graduate-program-bersama-dr-rer-nat-florian-gondesen/" target="_blank" class="kegiatan-card kegiatan-card-wide" data-aos="fade-up">
+                            <img src="img/ajar1.jpg" alt="Guest Lecture Series">
+                            <div class="kegiatan-overlay">
+                                <span class="kegiatan-date">12 Agu 2024</span>
+                                <h3 class="kegiatan-title" data-lang="kegiatan1_title">Guest Lecture: Network Intrusion & Honeypots</h3>
+                            </div>
+                        </a>
+                        <a href="#" target="_blank" class="kegiatan-card" data-aos="fade-up">
+                            <img src="img/ajar1.jpg" alt="Sarasehan Pascasarjana">
+                            <div class="kegiatan-overlay">
+                                <span class="kegiatan-date">27 Sep 2024</span>
+                                <h3 class="kegiatan-title" data-lang="kegiatan2_title">Sarasehan Program Pascasarjana Ganjil 2024/2025</h3>
+                            </div>
+                        </a>
+                        <a href="#" target="_blank" class="kegiatan-card kegiatan-card-tall" data-aos="fade-up">
+                            <img src="img/ajar1.jpg" alt="Penandatanganan MoA dengan Rajamangala University">
+                            <div class="kegiatan-overlay">
+                                <span class="kegiatan-date">18 Okt 2025</span>
+                                <h3 class="kegiatan-title" data-lang="kegiatan3_title">MoA dengan Rajamangala University Thailand</h3>
+                            </div>
+                        </a>
+                        <a href="#" target="_blank" class="kegiatan-card" data-aos="fade-up">
+                            <img src="img/ajar1.jpg" alt="Foto Kegiatan 4">
+                             <div class="kegiatan-overlay">
+                                <span class="kegiatan-date">28 Sep 2025</span>
+                                <h3 class="kegiatan-title" data-lang="kegiatan4_title">Pengabdian Masyarakat di Desa Binaan</h3>
+                            </div>
+                        </a>
+                        <a href="#" target="_blank" class="kegiatan-card" data-aos="fade-up">
+                            <img src="img/ajar1.jpg" alt="">
+                            <div class="kegiatan-overlay">
+                                <span class="kegiatan-date">20 Sep 2025</span>
+                                <h3 class="kegiatan-title" data-lang="kegiatan5_title">Yudisium Angkatan XXVII</h3>
+                            </div>
+                        </a>
+                        <a href="#" target="_blank" class="kegiatan-card" data-aos="fade-up">
+                            <img src="img/ajar1.jpg" alt="">
+                            <div class="kegiatan-overlay">
+                                <span class="kegiatan-date">15 Sep 2025</span>
+                                <h3 class="kegiatan-title" data-lang="kegiatan6_title">Studi Banding ke Universitas Gadjah Mada</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <button class="load-more-btn" data-lang="btn_load_more" style="display: none;">Muat Lebih Banyak</button>
+                </div>
+
+                <div id="media-panel" class="info-panel">
+                    <div class="media-grid">
+                        <div class="media-card" data-aos="fade-up">
+                            <img src="img/media1.jpg" alt="Liputan Wisuda ke-36">
+                            <div class="media-card-content">
+                                <h3 data-lang="media1_title"></h3>
+                                <p data-lang="media1_desc"></p>
+                                <a href="https://lenteraesai.id/2025/10/20/cetak-sdm-unggul-di-era-digital-itb-stikom-bali-gelar-wisuda-ke-36/" target="_blank" class="media-read-more" data-lang="btn_read_article"></a>
+                            </div>
+                        </div>
+                        <div class="media-card" data-aos="fade-up" data-aos-delay="100">
+                             <img src="img/media2.jpg" alt="Berita Akreditasi Baik Sekali">
+                            <div class="media-card-content">
+                                <h3 data-lang="media2_title"></h3>
+                                <p data-lang="media2_desc"></p>
+                                <a href="https://www.stikom-bali.ac.id/id/program-s2-sistem-informasi-itb-stikom-bali-akreditasi-baik-sekali-dari-lam-infokom/" target="_blank" class="media-read-more" data-lang="btn_read_article"></a>
+                            </div>
+                        </div>
+                        <div class="media-card" data-aos="fade-up" data-aos-delay="200">
+                             <img src="img/media3.jpg" alt="Liputan Seminar Keamanan Siber">
+                            <div class="media-card-content">
+                                <h3 data-lang="media3_title"></h3>
+                                <p data-lang="media3_desc"></p>
+                                <a href="https://baliportalnews.com/2024/08/program-magister-komputer-itb-stikom-bali-gelar-seminar-guest-lecture-series-bersama-dr-florian-gondesen/" target="_blank" class="media-read-more" data-lang="btn_read_article"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="load-more-btn" data-lang="btn_load_more" style="display: none;">Muat Lebih Banyak</button>
+                </div>
+    
+                <div id="pengumuman-panel" class="info-panel">
+                    <div class="pengumuman-list">
+                        <a href="https://pasca.stikom-bali.ac.id/tampil_pengumuman" target="_blank" class="pengumuman-item">
+                            <span class="pengumuman-date">19 Agu 2025</span>
+                            <span class="pengumuman-title" data-lang="pengumuman1_title"></span>
+                            <i class='bx bx-chevron-right'></i>
+                        </a>
+                        <a href="https://pasca.stikom-bali.ac.id/tampil_pengumuman" target="_blank" class="pengumuman-item">
+                            <span class="pengumuman-date">12 Sep 2025</span>
+                            <span class="pengumuman-title" data-lang="pengumuman2_title"></span>
+                            <i class='bx bx-chevron-right'></i>
+                        </a>
+                        <a href="https://siap.stikom-bali.ac.id/" target="_blank" class="pengumuman-item">
+                            <span class="pengumuman-date">01 Sep 2025</span>
+                            <span class="pengumuman-title" data-lang="pengumuman3_title"></span>
+                            <i class='bx bx-chevron-right'></i>
+                        </a>
+                        <a href="https://pasca.stikom-bali.ac.id/tampil_pengumuman" target="_blank" class="pengumuman-item">
+                            <span class="pengumuman-date">28 Jul 2025</span>
+                            <span class="pengumuman-title" data-lang="pengumuman4_title"></span>
+                            <i class='bx bx-chevron-right'></i>
+                        </a>
+                    </div>
+                    <button class="load-more-btn" data-lang="btn_load_more" style="display: none;">Muat Lebih Banyak</button>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-cta-box">
+            <div class="cta-text">
+                <h3 data-lang="footer_cta_title">Siap Memulai Perjalanan Akademik Anda?</h3>
+                <p data-lang="footer_cta_desc">Jadilah bagian dari komunitas intelektual kami dan raih masa depan gemilang.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="https://siap.stikom-bali.ac.id/" target="_blank" class="cta-button" data-lang="footer_cta_btn">Daftar Sekarang</a>
+            </div>
+        </div>
+        <div class="footer-main-info">
+            <div class="footer-identity">
+                <img src="img/LogoITB.png" alt="Logo ITB STIKOM Bali" class="footer-logo">
+                <div class="footer-separator"></div>
+                <p class="footer-brand-text" data-lang="pascasarjana_brand_footer">PASCA<br>SARJANA</p>
+            </div>
+            <div class="footer-address">
+                <h4><i class='bx bxs-map'></i> <span data-lang="footer_alamat_title">Alamat Kampus</span></h4>
+                <p>Jl. Raya Puputan No. 86 Renon, Denpasar, Bali</p>
+            </div>
+            <div class="footer-social">
+                <h4 data-lang="footer_social_title">Terhubung Dengan Kami</h4>
+                <div class="social-links">
+                    <a href="#" target="_blank" title="Instagram" class="instagram"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" target="_blank" title="WhatsApp" class="whatsapp"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="mailto:pascasarjana@stikom-bali.ac.id" title="Email"><i class='bx bxs-envelope'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; All Rights Reserved 2025, Pusat Komputer dan Jaringan ITB STIKOM Bali</p>
+        </div>
+    </div>
+</footer>
+
+<button id="backToTopBtn" title="Kembali ke atas"><i class='bx bx-chevron-up'></i></button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="script.js"></script>
+</div>
+</body>
+</html>
